@@ -87,7 +87,7 @@
   border-radius: 50%;
   font-size: 20px;
   font-weight: bold;
-  color: rgba(255, 166, 0, 0.848);
+  color: #e89059;
   text-align: center;
   background: white
   
@@ -99,3 +99,30 @@
     justify-content: center;
     height: 350px; /* Un peu de hauteur pour que les éléments aient la place de bouger */
 }
+
+a:link 
+{ 
+ text-decoration:none; 
+}
+hr {
+  
+  width: 200vh;
+  border: 50px;
+  border-top:  solid rgba(0, 0, 0, 0.1);
+  
+}
+
+.v-line1{
+   
+  border-left: thick solid white;;
+  height:40%;
+  left: 50%;
+  position: absolute;
+ }
+ .v-line2{
+   
+  border-left: thick solid white;;
+  height:40%;
+  left: 70%;
+  position: absolute;
+ }

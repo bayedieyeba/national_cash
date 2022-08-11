@@ -1,8 +1,9 @@
 import React from 'react'
+import backFormulaire from '../images/backFormulaire.png'
 const FormulaireSouscription = () => {
     return (
-        <div style={{backgroundColor:'orange'}}>
-             <h1 style={{textAlign:'center'}}>DEMANDE DE SOUSCRIPTIONS</h1> 
+        <div style={{backgroundImage: `url(${backFormulaire})`}}>
+             <h1 style={{textAlign:'center',color:'white'}}>DEMANDE DE SOUSCRIPTIONS</h1> 
              
                     <div className="row m-3">
                         <div className="col">
@@ -29,12 +30,12 @@ const FormulaireSouscription = () => {
                            <div className="col">
                                 
                             <div className="form-outline">
-                                <button className='form-control' style={{backgroundColor:'yellow'}}>SEND REQUEST</button>
+                                <button className='form-control' style={{backgroundColor:'black',color:'white'}}>SEND REQUEST</button>
                             </div>
                             
                            </div>
                     </div>
-                <p className='p-4 mr-3' style={{textAlign:'center',fontSize:'20px'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p className='p-4 mr-3' style={{textAlign:'center',fontSize:'20px',color:'white'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
     )
 }
