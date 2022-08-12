@@ -1,7 +1,8 @@
 import React from 'react'
-import CompteLeft from './CompteLeft';
-import CompteRight from './CompteRight';
 import background from '../images/background.png';
+import CompteCourant from './CompteCourant';
+import DepotAtemps from './DepotAtemps';
+import PlanEpargne from './PlanEpargne';
 const Comptes = () => {
     return (
         <div style={{backgroundImage: `url(${background})`,
@@ -10,13 +11,13 @@ const Comptes = () => {
                         height: "300vh",
                         color: "#f5f5f5"}}>
                    <div style={{color:'white'}}>
-                        <CompteLeft />
+                        <CompteCourant />
                    </div>
                     <div style={{color:'white'}}>
-                        <CompteRight />
+                        <DepotAtemps />
                     </div>
                     <div style={{color:'white'}}>
-                        <CompteLeft />
+                        <PlanEpargne />
                    </div>  
         </div>
     )

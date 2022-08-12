@@ -4,7 +4,7 @@ import Accueil from './components/Accueil';
 import Menu from './components/Menu';
 import Credits from './components/Credits';
 import Comptes from './components/Comptes';
-import Footer from './components/Footer';
+import Contact from './components/Contact';
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
               <Route exact path='/credits' element={<Credits />} />
             </Routes>
             <Routes>
-              <Route exact path='/contacts' element={<Footer />} />
+              <Route exact path='/contacts' element={<Contact />} />
             </Routes>
        </Router>
         

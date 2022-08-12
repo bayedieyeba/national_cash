@@ -23,9 +23,9 @@ const Menu = () => {
                     </div>
                     
                 </div>
-                <div className='d-flex justify-content-between bg-white' >
+                <div className='d-flex justify-content-between bg-white px-2' >
                     <div className='d-flex justify-content-start'>
-                         <div className='d-flex justify-content-between'>
+                         <div className='d-flex justify-content-between mx-5'>
                             <div className='d-flex flex-column  m-2'>
                                 <p style={{color:'blue', fontWeight:'bold'}}>Pour la microfinance Islamique</p>
                                 <img src={nc} style={{height:'40px',width:'210px'}} alt="" />
@@ -34,16 +34,16 @@ const Menu = () => {
                          </div>
                          
                     </div>
-                    <div className='d-flex justify-content-end'>
+                    <div className='d-flex justify-content-end mx-2'>
                          <div className='d-flex justify-content-between '>
-                               <div className=''>
-                                <img src={logo1} style={{height:'110px',width:'170px'}} alt="" />
+                               <div className='px-4'>
+                                <img src={logo1} style={{height:'105px',width:'125px'}} alt="" />
                                 </div> 
-                                <div className='m-4'><Link to='/'>ACCUEIL</Link></div>
-                                <div className='m-4'><Link to='/services'>NOS SERVICES</Link></div>
-                                <div className='m-4'><Link to='/credits'>NOS CREDITS</Link></div>
-                                <div className='m-4'><Link to=''>CASHILY</Link></div>
-                                <div className='m-4'><Link to='/contacts'>CONTACT</Link></div>
+                                <div className='m-4 py-3 active'><Link to='/'>ACCUEIL</Link></div>
+                                <div className='m-4 py-3'><Link to='/services'>NOS SERVICES</Link></div>
+                                <div className='m-4 py-3'><Link to='/credits'>NOS CREDITS</Link></div>
+                                <div className='m-4 py-3'><Link to=''>CASHILY</Link></div>
+                                <div className='m-4 py-3'><Link to='/contacts'>CONTACT</Link></div>
                                 
                          </div>
                     </div>

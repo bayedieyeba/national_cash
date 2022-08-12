@@ -1,30 +1,34 @@
 import React from 'react'
+import CreditAvanceSalire from './CreditAvanceSalaire';
+import CreditBayit from './CreditBayit';
+import CreditBidaya from './CreditBidaya';
+import CreditEquipmentS from './CreditEquipmentS';
+import CreditMaw from './CreditMew';
+import CreditNoujoun from './CreditNoujoun';
+import CreditTakaful from './CreditTakaful';
 import Footer from './Footer';
-import ServiceLeft from './ServiceLeft';
-import ServiceRight from './ServiceRight';
 const Credits = () => {
     
     return (
         <>
                 <div style={{
-                    padding:"100px",
-                    backgroundSize: "cover",
-                    backgroundColor:"#F5F5DC"
+                    padding:"50px",
+                    backgroundColor:"rgb(179, 119, 76)"
                     }}>
                     
-                            <ServiceLeft />
+                            <CreditMaw />
                             <hr />
-                            <ServiceRight />
+                            <CreditNoujoun />
                             <hr />
-                            <ServiceLeft /> 
+                            <CreditBayit /> 
                             <hr />
-                            <ServiceRight />
+                            <CreditBidaya />
                             <hr />
-                            <ServiceLeft />
+                            <CreditTakaful />
                             <hr />
-                            <ServiceLeft />
+                            <CreditEquipmentS />
                             <hr />
-                            <ServiceLeft />
+                            <CreditAvanceSalire />
                 </div>
             <Footer />
         </>

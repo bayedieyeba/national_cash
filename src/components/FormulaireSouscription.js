@@ -5,7 +5,7 @@ const FormulaireSouscription = () => {
         <div style={{backgroundImage: `url(${backFormulaire})`}}>
              <h1 style={{textAlign:'center',color:'white'}}>DEMANDE DE SOUSCRIPTIONS</h1> 
              
-                    <div className="row m-3">
+                    <div className="row m-4">
                         <div className="col">
                             
                             <div className="form-outline">
