@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/national_cash/static/css/main.8ca8b77e.css",
+    "main.js": "/national_cash/static/js/main.4746482b.js",
+    "static/js/787.7bb7a4e6.chunk.js": "/national_cash/static/js/787.7bb7a4e6.chunk.js",
+    "static/media/background.png": "/national_cash/static/media/background.f50eb027fe9fe34129e7.png",
+    "static/media/map.png": "/national_cash/static/media/map.0283123ea4169337abb1.png",
+    "static/media/back.png": "/national_cash/static/media/back.e80c2f4943050555ecc4.png",
+    "static/media/backService.png": "/national_cash/static/media/backService.ae4d1864d1ff98120b7e.png",
+    "static/media/logo2.png": "/national_cash/static/media/logo2.727f704f63c63e286192.png",
+    "static/media/depotAtemp.png": "/national_cash/static/media/depotAtemp.678994e4231faa8a091b.png",
+    "static/media/compteCourant.png": "/national_cash/static/media/compteCourant.c561c7b4629fe0e4cdc0.png",
+    "static/media/planEpargne.png": "/national_cash/static/media/planEpargne.8fe42e8ff10d2a47acd4.png",
+    "static/media/creditTakaful.png": "/national_cash/static/media/creditTakaful.54aef53deaac12ee8821.png",
+    "static/media/logo1.png": "/national_cash/static/media/logo1.bfe9c1799092700c4e19.png",
+    "static/media/creditEquip.png": "/national_cash/static/media/creditEquip.e5b988bf6e5b6683e80c.png",
+    "static/media/creditBidaya.png": "/national_cash/static/media/creditBidaya.a3dbc476ffaba5cd1c0b.png",
+    "static/media/creditNoujoun.PNG": "/national_cash/static/media/creditNoujoun.41035f4535293e1b15d4.PNG",
+    "static/media/creditAvanceSalaire.png": "/national_cash/static/media/creditAvanceSalaire.e4833443be057b0e04e4.png",
+    "static/media/creditMaw.png": "/national_cash/static/media/creditMaw.0e1cb82a9d4b49a93026.png",
+    "static/media/creditBayit.png": "/national_cash/static/media/creditBayit.bd1f2964c8f4c4dd4ad4.png",
+    "static/media/nc.png": "/national_cash/static/media/nc.554401fc0a10e5b1c22c.png",
+    "static/media/backFormulaire.png": "/national_cash/static/media/backFormulaire.cfbba5e1d44a28fa7f7b.png",
+    "index.html": "/national_cash/index.html",
+    "main.8ca8b77e.css.map": "/national_cash/static/css/main.8ca8b77e.css.map",
+    "main.4746482b.js.map": "/national_cash/static/js/main.4746482b.js.map",
+    "787.7bb7a4e6.chunk.js.map": "/national_cash/static/js/787.7bb7a4e6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8ca8b77e.css",
+    "static/js/main.4746482b.js"
+  ]
+}
