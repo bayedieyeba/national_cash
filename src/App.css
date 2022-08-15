@@ -126,3 +126,10 @@ hr {
   left: 75%;
   position: absolute;
  }
+ .moncercle{
+  background:white;
+  border-radius:50%;
+  width:10px;
+  height:10px;
+  border:2px solid white; 
+}
