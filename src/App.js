@@ -5,13 +5,18 @@ import Menu from './components/Menu';
 import Credits from './components/Credits';
 import Comptes from './components/Comptes';
 import Contact from './components/Contact';
+import Creusol from './components/Creusol';
+import NavBar from './components/NavBar';
+import Slider from './components/Slider';
 
 function App() {
   return (
         <Router>
-            <Menu/>
-          
-            <Routes>
+          <NavBar />
+          <Slider />
+            {/* <Menu/>
+            <Creusol /> */}
+            {/* <Routes>
               <Route exact path='/' element={<Accueil />} />
             </Routes>
             <Routes>
@@ -22,7 +27,7 @@ function App() {
             </Routes>
             <Routes>
               <Route exact path='/contacts' element={<Contact />} />
-            </Routes>
+            </Routes> */}
        </Router>
         
   );
