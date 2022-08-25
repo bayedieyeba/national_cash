@@ -7,27 +7,27 @@ import CreditMaw from './CreditMew';
 import CreditNoujoun from './CreditNoujoun';
 import CreditTakaful from './CreditTakaful';
 import Footer from './Footer';
+import backService from '../images/backCredit.png';
 const Credits = () => {
     
     return (
         <>
-                <div style={{
-                    padding:"50px",
-                    backgroundColor:"rgb(179, 119, 76)"
+                <div 
+                    style={{backgroundImage: `url(${backService})`
                     }}>
                     
                             <CreditMaw />
-                            <hr />
+                            
                             <CreditNoujoun />
-                            <hr />
+                            
                             <CreditBayit /> 
-                            <hr />
+                            
                             <CreditBidaya />
-                            <hr />
+                            
                             <CreditTakaful />
-                            <hr />
+                            
                             <CreditEquipmentS />
-                            <hr />
+                            
                             <CreditAvanceSalire />
                 </div>
             <Footer />

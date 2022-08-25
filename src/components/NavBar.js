@@ -4,6 +4,8 @@ import { VscTwitter } from "react-icons/vsc";
 import { FaFacebookF } from "react-icons/fa";
 import nc from '../images/nc.png';
 import logo1 from '../images/logo1.png';
+import {Nav,Navbar,NavLink} from 'react-bootstrap'
+import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
     <>
@@ -42,8 +44,26 @@ const NavBar = () => {
             </div>
         </div>
     </nav>
-
-    <nav className='navbar-second flex'>
+    <Navbar collapseOnSelect expand="sm" bg="dark" variant="dark">
+          <Navbar.Brand>
+          <img src={nc} style={{height:'40px',width:'210px'}} alt="" />
+          </Navbar.Brand>
+            <Navbar.Toggle aria-controls="navbarScroll" data-bs-toggle="collapse" data-bs-target="#navbarScroll" />
+            <img className='p-1' src={logo1} style={{height:'100px',width:'125px'}} alt="" />
+            <div className=''>
+            <Navbar.Collapse style={{position:'relative'}} id="navbarScroll">
+            
+                <Nav>
+                    <NavLink  eventKey="1" as={Link} to="/">Home</NavLink>
+                    <NavLink  eventKey="2" as={Link} to="/about">About</NavLink>
+                    <NavLink  eventKey="3" as={Link} to="/contact">Contact</NavLink>
+                    <NavLink  eventKey="2" as={Link} to="/about">About</NavLink>
+                    <NavLink  eventKey="3" as={Link} to="/contact">Contact</NavLink>
+                </Nav>
+            </Navbar.Collapse>  
+            </div>
+        </Navbar>
+    {/* <nav className='navbar-second flex'>
       <div className='logo'>
         <p style={{fontSize:'15px',fontWeight:'bold'}} className='m-3'>Pour la microfinance Islamique</p>
         <img src={nc} style={{height:'40px',width:'210px'}} alt="" />
@@ -56,10 +76,8 @@ const NavBar = () => {
         <li><a href="">CASHILY</a></li>
         <li><a href="">CONTACT</a></li>
       </ul>
-    </nav>
-    <section>
-
-    </section>
+    </nav> */}
+    
         {/* top bar */}
         {/* <section className='bg-dark'>
             <div className='container'>

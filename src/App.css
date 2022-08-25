@@ -213,6 +213,19 @@ a{
   color: black;
   font-weight: 400;
 }
+@media screen and (max-width:1200px) {
+   
+  .navbar-one{
+          width: 80%;
+      }
+  }
+  
+  @media screen and (max-width:600px) {
+      
+  .navbar-one{
+          width: 90%;
+      }
+}
 /* section{
   width: 250vh;
   height: 150vh;

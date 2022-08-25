@@ -12,10 +12,7 @@ import backService from '../images/backService.png'
 const Footer = () => {
     return (
         <>
-            <div className='my-3' style={{
-                
-                backgroundSize: "cover",
-                height: "115vh",
+            <div  style={{
                 color: "#f5f5f5"
                 }}>
                 <div className='p-4 ' style={{backgroundImage: `url(${backService})`,}}>
@@ -33,7 +30,7 @@ const Footer = () => {
                 backgroundImage: `url(${map})`,
                 backgroundSize: "cover",
                 height: "120vh",
-                width:"215vh",
+                
                 color: "#f5f5f5"
                 }}>
 

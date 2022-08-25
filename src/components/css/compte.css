@@ -1,0 +1,20 @@
+
+.comptes{
+    background-image: url(/src/images/background.png);
+    padding:"100px";
+    background-size: "cover";
+    height: "220vh",
+}
+@media screen and (max-width:100px) {
+    .comptes{
+        width: 40%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .comptes{
+        width: 90%;
+    }
+}
+
+                        

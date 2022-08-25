@@ -8,7 +8,7 @@ const CreditNoujoun = () => {
         setLireSuite(true)
     }
         return(
-            <div className="d-flex justify-content-between p-5 mt-5 " style={{backgroundColor:'brosybrownlue'}}>
+            <div className="d-flex justify-content-between p-3 m-5  " >
                             <div>
                                 <img src={creditNoujoun} style={{height:'400px',width:'400px',display: 'block;',marginLeft:' auto;', marginRight: 'auto;'}} alt="" />
                              

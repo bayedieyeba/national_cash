@@ -3,7 +3,7 @@ import Arrows from './Arrows'
 import Dots from './Dots'
 import ImageSlide from './ImageSlide'
 import SliderContent from './SliderContent'
-import './Slider.css'
+import './css/Slider.css'
 const len =ImageSlide.length - 1
 function Slider() {
     const [activeIndex,setActiveIndex] = useState(0)
@@ -14,11 +14,12 @@ function Slider() {
 },[activeIndex])
   return(
     <div className='slider-container'>
+      
     <SliderContent activeIndex={activeIndex} ImageSlider={ImageSlide} />
-    <Arrows
+    {/* <Arrows
      prevSlide={()=>setActiveIndex(activeIndex < 1 ? len :activeIndex -1)}
      nextSlide={()=>setActiveIndex(activeIndex === len ? 0 :activeIndex + 1)}
-      />
+      /> */}
       <Dots 
       activeIndex={activeIndex}
        ImageSlide={ImageSlide} 
