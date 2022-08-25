@@ -9,7 +9,6 @@ function Accueil() {
    
     return (
       <div>
-        <div className=''></div>
              <Slider />
              <Activites />
               <Comptes />
