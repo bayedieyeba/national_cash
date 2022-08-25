@@ -19,3 +19,17 @@ nav .navbar-collapse{
     transition: .6s all ease-in-out;
     height: 0 !important;
 }
+.header{
+
+}
+@media screen and (max-width:1200px) {
+    .header{
+        width: 1300%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .header{
+        width: 250%;
+    }
+}

@@ -1,0 +1,15 @@
+.activites{
+    background-image: url(/src/images/backService.png);
+    
+}
+@media screen and (max-width:1200px) {
+    .activites{
+        width: 1300%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .activites{
+        width: 250%;
+    }
+}

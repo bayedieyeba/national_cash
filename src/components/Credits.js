@@ -8,13 +8,12 @@ import CreditNoujoun from './CreditNoujoun';
 import CreditTakaful from './CreditTakaful';
 import Footer from './Footer';
 import backService from '../images/backCredit.png';
+import './css/credits.css'
 const Credits = () => {
     
     return (
         <>
-                <div 
-                    style={{backgroundImage: `url(${backService})`
-                    }}>
+                <div className='credits'>
                     
                             <CreditMaw />
                             

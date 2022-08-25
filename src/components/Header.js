@@ -17,7 +17,7 @@ export default class Header extends Component {
     }
     render() {
         return (
-            <div className='fixed'>
+            <div className='header'>
                 <nav className='navbar-one flex'>
                     <div className='left flex '>
                         <div>

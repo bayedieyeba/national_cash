@@ -9,11 +9,11 @@ function Accueil() {
    
     return (
       <div>
-             <Slider />
-             <Activites />
-              <Comptes />
-              <FormulaireSouscription />
-              <Footer />
+        <Slider />
+         <Activites />
+         <Comptes />
+         <FormulaireSouscription />
+        <Footer />
       </div>
     )
 }

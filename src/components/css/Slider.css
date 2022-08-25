@@ -13,7 +13,7 @@
     margin: auto;
     overflow: hidden;
 }
-/* @media screen and (max-width:1200px) {
+@media screen and (max-width:1200px) {
     .slider-container{
         width: 130%;
        
@@ -25,7 +25,7 @@
         width: 250%;
     }
 }
-@media screen and (max-height:50vh) {
+/* @media screen and (max-height:50vh) {
     .slider-container{
         height: 20vh;
        
@@ -101,7 +101,7 @@
     height: 100%;
     position: absolute;
     display: flex;
-    top: 80%;
+    top: 75%;
     justify-content: center;
     z-index: 100;
 }

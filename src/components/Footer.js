@@ -9,10 +9,11 @@ import back from '../images/back.png';
 import logo2 from '../images/logo2.png';
 import map from '../images/map.png';
 import backService from '../images/backService.png'
+import './css/footer.css'
 const Footer = () => {
     return (
         <>
-            <div  style={{
+            <div className='footer'  style={{
                 color: "#f5f5f5"
                 }}>
                 <div className='p-4 ' style={{backgroundImage: `url(${backService})`,}}>

@@ -1,20 +1,17 @@
-
-.comptes{
-    background-image: url(/src/images/background.png);
-    padding:"100px";
+.credits{
+    background-image: url(/src/images/backCredit.png);
+   
     background-size: "cover";
-    height: "220vh",
+    height: "220vh"
 }
 @media screen and (max-width:1200px) {
-    .comptes{
+    .credits{
         width: 1300%;
     }
 }
 
 @media screen and (max-width:600px) {
-    .comptes{
+    .credits{
         width: 250%;
     }
 }
-
-                        

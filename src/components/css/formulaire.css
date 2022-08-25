@@ -1,20 +1,17 @@
-
-.comptes{
-    background-image: url(/src/images/background.png);
+.formulaire{
+    background-image: url(/src/images/backFormulaire.png);
     padding:"100px";
     background-size: "cover";
     height: "220vh",
 }
 @media screen and (max-width:1200px) {
-    .comptes{
+    .formulaire{
         width: 1300%;
     }
 }
 
 @media screen and (max-width:600px) {
-    .comptes{
+    .formulaire{
         width: 250%;
     }
 }
-
-                        

@@ -1,11 +1,10 @@
 import React from 'react'
 import backService from '../images/backService.png';
+import './css/activites.css'
 const Activites = () => {
     return (
-        <div style={{backgroundImage: `url(${backService})`,
-                   
-                    }}
-         className='row justify-content-center custom-line p-5  '>
+        <div 
+         className='row justify-content-center custom-line p-5 activites '>
             <h1 className='' style={{left:'35%',position:'absolute',color:'white'}} >NOS VALEURS</h1>
            
                <div className='col-1 m-4 p-5'>

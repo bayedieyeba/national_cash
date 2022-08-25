@@ -1,8 +1,9 @@
 import React from 'react'
 import backFormulaire from '../images/backFormulaire.png'
+import './css/formulaire.css'
 const FormulaireSouscription = () => {
     return (
-        <div style={{backgroundImage: `url(${backFormulaire})`}}>
+        <div className='formulaire'>
              <h1 style={{textAlign:'center',color:'white'}}>DEMANDE DE SOUSCRIPTIONS</h1> 
              
                     <div className="row m-4">
