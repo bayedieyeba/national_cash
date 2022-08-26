@@ -1,0 +1,13 @@
+.footerbottom{
+}
+@media screen and (max-width:100px) {
+    .footerbottom{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:300px) {
+    .footerbottom{
+        width: 120%;
+    }
+}

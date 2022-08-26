@@ -19,7 +19,7 @@ nav .navbar-collapse{
     transition: .6s all ease-in-out;
     height: 0 !important;
 }
-.header{
+.header{ 
 
 }
 @media screen and (max-width:1200px) {
@@ -33,3 +33,6 @@ nav .navbar-collapse{
         width: 250%;
     }
 }
+a:hover {
+    background-color: blue;
+  }

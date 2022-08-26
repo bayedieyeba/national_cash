@@ -8,13 +8,13 @@ import Slider from './Slider';
 function Accueil() {
    
     return (
-      <div>
+      <>
         <Slider />
          <Activites />
          <Comptes />
          <FormulaireSouscription />
         <Footer />
-      </div>
+      </>
     )
 }
 

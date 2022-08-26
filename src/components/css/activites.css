@@ -1,6 +1,8 @@
 .activites{
     background-image: url(/src/images/backService.png);
-    
+    padding:"100px";
+    background-size: "cover";
+    height: "220vh",
 }
 @media screen and (max-width:1200px) {
     .activites{

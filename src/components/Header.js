@@ -17,8 +17,8 @@ export default class Header extends Component {
     }
     render() {
         return (
-            <div className='header'>
-                <nav className='navbar-one flex'>
+            <div className='header  '>
+                {/* <nav className='navbar-one flex'>
                     <div className='left flex '>
                         <div>
                             <span><FaFacebookF/></span>
@@ -50,9 +50,9 @@ export default class Header extends Component {
                                 </span>
                             </div>
                         </div>
-                    </nav>
-                        <nav className="  navbar navbar-expand-lg navbar-dark bg-white">
-                            <div className="container">
+                    </nav> */}
+                <nav className="fixed-top  navbar navbar-expand-lg navbar-dark bg-white">
+                            <div className="container p-0">
                             <div className='d-flex justify-content-between'>
                             <div className='d-flex justify-content-start'>
                                     <div className='d-flex justify-content-between mx-4'>
@@ -65,9 +65,9 @@ export default class Header extends Component {
                                     
                                 </div>
                                 <div className='mx-5'></div>
-                                <div className='mx-3'></div>
+                                <div className='mx-4'></div>
                                 <div className='d-flex justify-content-end mx-5 p-0' >
-                                <img  src={logo1} style={{height:'100px',width:'115px'}} alt="" />
+                                <img  src={logo1} style={{height:'95px',width:'115px'}} alt="" />
                                 </div >
                             </div>
                                 <button className="navbar-toggler border border-info text-info" 
@@ -89,12 +89,15 @@ export default class Header extends Component {
                                             <Link className="nav-link text-light" to="/credits" >NOS CREDITS</Link>
                                         </li>
                                         <li className="nav-item">
+                                            <Link className="nav-link text-light" to="#">CASHILY</Link>
+                                        </li>
+                                        <li className="nav-item">
                                             <Link className="nav-link text-light" to="/contacts">CONTACT</Link>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
-                        </nav>
+                    </nav>
             </div>
         )
     }

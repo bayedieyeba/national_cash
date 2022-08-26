@@ -9,26 +9,39 @@ import CreditTakaful from './CreditTakaful';
 import Footer from './Footer';
 import backService from '../images/backCredit.png';
 import './css/credits.css'
+import Fade from 'react-reveal/Fade'
+import FormulaireSouscription from './FormulaireSouscription';
+
 const Credits = () => {
     
     return (
         <>
-                <div className='credits'>
-                    
+            <div className='credits'>
+                    <Fade right>
                             <CreditMaw />
-                            
+                    </Fade> 
+
+                    <Fade left>  
                             <CreditNoujoun />
-                            
+                    </Fade> 
+                    <Fade right> 
                             <CreditBayit /> 
-                            
+                    </Fade> 
+                    <Fade left>    
                             <CreditBidaya />
-                            
+                    </Fade> 
+                    <Fade right>  
                             <CreditTakaful />
-                            
+                    </Fade>  
+                    <Fade left>  
                             <CreditEquipmentS />
-                            
+                    </Fade> 
+                    <Fade right>     
                             <CreditAvanceSalire />
-                </div>
+                    </Fade>
+
+            </div>
+            <FormulaireSouscription /> 
             <Footer />
         </>
     )
