@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import {useTranslation} from "react-i18next";
 import depotATerme from '../images/depotAterme.png';
 import compteCourant from '../images/cc.png';
 import epargne from '../images/epargne.png';
@@ -6,6 +7,7 @@ import '../components/css/compte.css'
 import Fade from 'react-reveal/Fade'
 import Flash from 'react-reveal/Flash';
 const Comptes = () => {
+    const {t} =useTranslation()
     const [lireSuiteCC,setLireSuiteCC] = useState(false)
     const [hiddButtonCC,setHiddButtonCC] = useState(true)
 
@@ -18,30 +20,41 @@ const Comptes = () => {
         setHiddButtonCC(false)
         setLireSuiteCC(true)
     }
+    const handleLireMoinsCC = () => {
+        setHiddButtonCC(true)
+        setLireSuiteCC(false)
+    }
     const handleClickCE =() =>{
         setHiddButtonCE(false)
         setLireSuiteCE(true)
+    }
+    const handleLireMoinsCE =() => {
+        setHiddButtonCE(true)
+        setLireSuiteCE(false)
     }
     const handleClickDT =() =>{
         setHiddButtonDT(false)
         setLireSuiteDT(true)
     }
+    const handleLireMoinsDT =() => {
+        setHiddButtonDT(true)
+        setLireSuiteDT(false)
+    }
     return (
         <div className='comptes'>
                <Fade right>
-                    <div style={{color:'white'}}>
-                        <div className="d-flex justify-content-between p-5 " style={{backgroundColor:'brosybrownlue'}}>
-                                    <div className=''><p style={{padding:'40px',color:'white'}} >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                    {hiddButtonCC && <button type='button' className='myButton' onClick={handleClickCC} >LIRE LA SUITE</button>}
+                    <div style={{color:'white'}}className="p-5" >
+                        <div className="d-flex justify-content-between p-5 m-5 " style={{backgroundColor:'brosybrownlue'}}>
+                                    <div className=''><p style={{padding:'80px',color:'white'}} >{t('loremPartie1')}
+                                    {hiddButtonCC && <button type='button' className='myButton' onClick={handleClickCC} >{t('lire_la_suite')}</button>}
                                     {lireSuiteCC && <div>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                         <p>{t('loremPartie2')}</p>
+                                         <p>{t('loremPartie2')}</p>
+                                         <p>{t('loremPartie2')}</p>
+                                         <p>{t('loremPartie2')}</p>
+                                         <p>{t('loremPartie2')}</p>
+                                         <p>{t('loremPartie2')}</p>
+                                         <button className='myButton' onClick={handleLireMoinsCC} >{t('lire_moins')} </button>
                                         </div>
                                     }
                                     </p> 
@@ -57,24 +70,23 @@ const Comptes = () => {
                     </div>
                 </Fade>
                 <Fade left>
-                    <div style={{color:'white'}}>
+                    <div style={{color:'white'}} className="p-5" >
                         <div className="d-flex justify-content-between p-5 " style={{backgroundColor:'brosybrownlue'}}>
                         <div>
                                   <Flash>
                                         <img src={depotATerme} style={{height:'400px',width:'400px',display: 'block;',marginLeft:' auto;', marginRight: 'auto;'}} alt="" />
                                    </Flash>
                                     </div>
-                                    <div className=''><p style={{padding:'40px',color:'white'}} >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                    {hiddButtonDT && <button onClick={handleClickDT} className='myButton'>LIRE LA SUITE</button>}
+                                    <div className=''><p style={{padding:'40px',color:'white'}} >{t('loremPartie1')}
+                                    {hiddButtonDT && <button onClick={handleClickDT} className='myButton'>{t('lire_la_suite')}</button>}
                                     {lireSuiteDT && <div>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                        <p>{t('loremPartie2')}</p>
+                                         <p>{t('loremPartie2')}</p>
+                                         <p>{t('loremPartie2')}</p>
+                                         <p>{t('loremPartie2')}</p>
+                                         <p>{t('loremPartie2')}</p>
+                                         <p>{t('loremPartie2')}</p>
+                                         <button className='myButton' onClick={handleLireMoinsDT} >{t('lire_moins')} </button>
                                         </div>
                                     }
                                     </p> 
@@ -85,19 +97,18 @@ const Comptes = () => {
                     </div>
                 </Fade>
                 <Fade right>
-                        <div style={{color:'white'}}>
+                        <div style={{color:'white'}} className="p-5"  >
                             <div className="d-flex justify-content-between p-5 " style={{backgroundColor:'brosybrownlue'}}>
-                                        <div className=''><p style={{padding:'40px',color:'white'}} >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                        {hiddButtonCE && <button onClick={handleClickCE} className='myButton'>LIRE LA SUITE</button>}
+                                        <div className=''><p style={{padding:'40px',color:'white'}} >{t('loremPartie1')}
+                                        {hiddButtonCE && <button onClick={handleClickCE} className='myButton'>{t('lire_la_suite')}</button>}
                                         {lireSuiteCE && <div>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                        <p>{t('loremPartie2')}</p>
+                                         <p>{t('loremPartie2')}</p>
+                                         <p>{t('loremPartie2')}</p>
+                                         <p>{t('loremPartie2')}</p>
+                                         <p>{t('loremPartie2')}</p>
+                                         <p>{t('loremPartie2')}</p>
+                                         <button className='myButton' onClick={handleLireMoinsCE} >{t('lire_moins')} </button>
                                         </div>
                                         }
                                         </p> 

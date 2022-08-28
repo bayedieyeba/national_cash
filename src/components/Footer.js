@@ -1,4 +1,5 @@
 import React from 'react'
+import {useTranslation} from "react-i18next";
 import { Link } from 'react-router-dom';
 import { GiPositionMarker } from "react-icons/gi";
 import {AiTwotonePhone,AiOutlineGooglePlus,AiFillLinkedin } from "react-icons/ai";
@@ -14,6 +15,7 @@ import './css/footerBottom.css'
 import Fade from 'react-reveal/Fade';
 import Slide from 'react-reveal/Slide';
 const Footer = () => {
+    const {t} =useTranslation()
     return (
       
             <div className='footer '  style={{
@@ -23,9 +25,9 @@ const Footer = () => {
                 
                     <div className='p-4 ' style={{backgroundImage: `url(${backService})`,padding:''}}>
                     <Fade right>
-                    <h1 style={{textAlign:'center',fontWeight:'bold'}}>OUR CONTACTS</h1>
-                    <p style={{textAlign:'center' ,fontSize:'20px'}} >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>  
-                    <div className='m-2 ' style={{textAlign:'center',fontSize:'25px'}}><Link to=""><GiPositionMarker style={{color:'#e89059'}}/></Link> Lorem ipsum dolor sit amet,consectetur adipiscing elit</div>
+                    <h1 style={{textAlign:'center',fontWeight:'bold'}}>{t('titre_contact')}</h1>
+                    <p style={{textAlign:'center' ,fontSize:'20px'}} >{t('adresse1')}</p>  
+                    <div className='m-2 ' style={{textAlign:'center',fontSize:'25px'}}><Link to=""><GiPositionMarker style={{color:'#e89059'}}/></Link>{t('adresse2')} </div>
                     <div className='d-flex justify-content-center '>
                         
                     <div className='m-2 p-3'> <Link to=""><AiTwotonePhone style={{color:'#e89059',fontSize:'25px'}} /></Link>(123)456-78-90</div>
@@ -56,10 +58,10 @@ const Footer = () => {
                             <div className='d-flex flex-row justify-content-space-between mt-5'>
                             <img src={logo2} style={{height:'160px',width:'160px'}} className="" alt="" />
                                 <div  className='d-flex flex-column px-3'>
-                                        <p style={{fontWeight:'bold',fontSize:'30px'}}>Bulletins</p>
-                                        <label htmlFor="">Recevez nos meilleurs offres</label>
-                                        <input type="text" className='form-control' placeholder='votre email' />
-                                        <button className='btn btn-dark m-1'>Send</button>
+                                        <p style={{fontWeight:'bold',fontSize:'30px'}}>{t('titre_bulletins')} </p>
+                                        <label htmlFor="">{t('sous_titre_bulletins')} </label>
+                                        <input type="text" className='form-control' placeholder={t('input_bulletin')} />
+                                        <button className='btn btn-dark m-1'>{t('button_bulletin')} </button>
                                 </div>
                               
                             </div>
@@ -68,7 +70,7 @@ const Footer = () => {
                             <Slide bottom>
                             <div className='d-flex flex-column mt-5'>
                                 
-                                <p style={{fontWeight:'bold',fontSize:'30px'}}>LIENS UTILES</p>
+                                <p style={{fontWeight:'bold',fontSize:'30px'}}>{t('liens')} </p>
                                 <p className='px-4'>www.siteweb.com</p>
                                 <p className='px-4'>www.siteweb.com</p>
                                 <p className='px-4'>www.siteweb.com</p>
@@ -77,7 +79,7 @@ const Footer = () => {
                             <div className="v-line2"></div>
                             <Slide bottom>
                             <div className='d-flex flex-column mt-5 mx-5'>
-                            <p style={{fontWeight:'bold',fontSize:'20px',textAlign:'center'}}>Suivez-nous</p>
+                            <p style={{fontWeight:'bold',fontSize:'20px',textAlign:'center'}}>{t('suivre')} </p>
                                 <div className='d-flex justify-content-between'>
                                    <Link to='/'><FaFacebookF style={{color:'white',fontSize:'20px'}}/> </Link>
                                    <Link to='/'><VscTwitter style={{color:'white',fontSize:'20px'}}/></Link>
