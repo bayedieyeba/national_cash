@@ -5,6 +5,7 @@ import Credits from './components/Credits';
 import Comptes from './components/Comptes';
 import Contact from './components/Contact';
 import Header from './components/Header';
+import FormulaireService from './components/FormulaireService';
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
             </Routes>
             <Routes>
               <Route exact path='/contacts' element={<Contact />} />
+            </Routes>
+            <Routes>
+              <Route exact path='/souscription' element={<FormulaireService />} />
             </Routes>
        </Router>
       </div>

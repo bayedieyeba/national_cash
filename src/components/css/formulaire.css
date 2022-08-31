@@ -1,5 +1,6 @@
 .formulaire{
-    background-image: url(/src/images/backFormulaire.png);
+    /* background-image: url(/src/images/backFormulaire.png); */
+    background-color: #f8ad13;
     padding:"100px";
     background-size: "cover";
     height: "220vh",

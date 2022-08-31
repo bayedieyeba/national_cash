@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {useTranslation} from "react-i18next";
 import { Link } from 'react-router-dom';
 import { GiPositionMarker } from "react-icons/gi";
@@ -16,6 +16,19 @@ import Fade from 'react-reveal/Fade';
 import Slide from 'react-reveal/Slide';
 const Footer = () => {
     const {t} =useTranslation()
+
+    useEffect(()=>{
+        const ifameData=document.getElementById("iframeId")
+        const lat=18.081594;
+        const lon= -15.976268;
+        ifameData.src=`https://maps.google.com/maps?q=${lat},${lon}&hl=es;&output=embed`
+
+        const ifameData2=document.getElementById("iframeId2")
+        const lat2=18.082516;
+        const lon2= -15.980804;
+        ifameData2.src=`https://maps.google.com/maps?q=${lat2},${lon2}&hl=es;&output=embed`
+    })
+
     return (
       
             <div className='footer '  style={{
@@ -37,15 +50,18 @@ const Footer = () => {
                     </Fade>
                     </div>
                 
-                <div style={{
+                {/* <div style={{
                 backgroundImage: `url(${map})`,
                 backgroundSize: "cover",
                 height: "120vh",
                 
                 color: "#f5f5f5"
                 }}>
-
-                </div>
+                </div> */}
+               <div className='container'>
+               <iframe id="iframeId" height="300px" width="100%"></iframe>
+                <iframe id="iframeId2" height="300px" width="100%"></iframe>
+               </div>
                 <div className='footerbottom' style={{
                     backgroundImage: `url(${back})`,
                     backgroundSize: "cover",

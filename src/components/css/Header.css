@@ -34,5 +34,18 @@ nav .navbar-collapse{
     }
 }
 a:hover {
-    background-color: blue;
+
+  min-width: 80%;
+  cursor: pointer;
+  /* margin-right: 0.25em;
+  margin-top: 0.5em;
+  padding: 	0px; */
+  /* border: none; */
+  border-radius: 10px;
+  background-color: #003d6a;
+  color:white;
+
   }
+.link_hover :hover {
+    color: white;
+}

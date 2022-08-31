@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
+import {useTranslation} from "react-i18next";
+import ces from '../images/left.png'
 import creditEquip from '../images/creditEquip.png';
 const CreditEquipmentS = () => {
+    const {t} =useTranslation()
     const [lireSuite,setLireSuite] = useState(false)
     const [hiddButton,setHiddButton] = useState(true)
     const handleClick = () => {
@@ -9,22 +12,25 @@ const CreditEquipmentS = () => {
     }
         return(
             <div className="d-flex justify-content-between p-5 mt-5 " style={{backgroundColor:'brosybrownlue'}}>
-                            <div>
-                                <img src={creditEquip} style={{height:'400px',width:'400px',display: 'block;',marginLeft:' auto;', marginRight: 'auto;'}} alt="" />
+                            <div className='m-4'>
+                            <div className='footerbottom' style={{
+                                                backgroundImage: `url(${ces})`,
+                                                backgroundSize: "cover",
+                                                height:'400px',
+                                                width:'400px'
+                                                
+                                                }}>
+                                            <p style={{textAlign:'center',padding:'85px', fontSize :'40px',  fontFamily:'Roboto',fontWeight:'bold' ,color:'#003d6a'}}> {t('nom_credit_equipement')} </p>
+                                        
+                                        </div>
+                                {/* <img src={creditEquip} style={{height:'400px',width:'400px',display: 'block;',marginLeft:' auto;', marginRight: 'auto;'}} alt="" /> */}
                              
                             </div>
-                            <div className=''><p style={{padding:'40px',color:'rgb(5, 5, 125)'}} >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            <div className=''><p style={{padding:'60px',color:'rgb(5, 5, 125)'}} > {t('description1_equipement')}
                             {hiddButton && <button onClick={handleClick} className='myButton' >LIRE LA SUITE</button>}
                             {lireSuite && 
                             <div>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                             <p>{t('description2_equipement')} </p>
                             </div>
                              }
                             </p> 

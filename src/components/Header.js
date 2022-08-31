@@ -44,7 +44,7 @@ const Header = () => {
   return (
     <div className='header'>
            <nav className="fixed-top  navbar navbar-expand-lg navbar-dark bg-white">
-                <div className="container p-0">
+                <div className="container ">
                         <div className='d-flex justify-content-between'>
                             <div className='d-flex justify-content-start'>
                                     <div className='d-flex justify-content-between mx-4'>
@@ -58,35 +58,11 @@ const Header = () => {
                             </div>
                                 <div className='mx-5'></div>
                                 
-                                <div className='d-flex justify-content-end mx-5 p-0' >
-                                     <img  src={logo1} style={{height:'95px',width:'115px'}} alt="" />
+                                <div className='d-flex justify-content-end mx-5 ' >
+                                     <img  src={logo1} style={{height:'100px',width:'110px'}} alt="" />
                                 </div >
                         </div>
-                        <div className='dropdown'>
-                                    <button className='btn btn-link dropdown-toggle'
-                                    type='button'
-                                    id='dropdownMenuButton1'
-                                    data-bs-toggle="dropdown"
-                                    aria-expanded ="false"
-                                    >
-                                            <GlobeIcon />
-                                    </button>
-                                    <ul className='dropdown-menu' aria-labelledby='dropdownMenuButton1'>
-                                        <li className='dropdown-item-text' >{t(['langue'])} </li>
-                                        {languages.map(({code,name,country_code})=>(
-
-                                            <li key={country_code}>
-                                                <button className='dropdown-item' onClick={()=>i18next.changeLanguage(code)} disabled={code===currentLanguageCode}>
-                                                    <span className={`flag-icon flag-icon-${country_code} max-2`}
-                                                    style={{opacity: code===currentLanguageCode ? 0.5 :1}}>
-
-                                                    </span>
-                                                    {name}
-                                                </button>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
+                        
                                 <button className="navbar-toggler border border-info text-info" 
                                 onClick={ ()=> setShow(!show)  } >
                                     {show ? <MenuIcon /> : <CloseIcon />}
@@ -97,19 +73,46 @@ const Header = () => {
                                  <div className={show ? 'collapse navbar-collapse' : 'collapse navbar-collapse active'}>
                                     <ul className="navbar-nav ms-auto">
                                         <li className="nav-item">
-                                            <Link className="nav-link text-light" to="/">{t('accueil')} </Link>
+                                            <Link className="nav-link text-light" to="/"> <i >{t('accueil')}</i> </Link>
                                         </li>
                                         <li className="nav-item">
-                                            <Link className="nav-link text-light" to="/services">{t('nos_services')} </Link>
+                                            <Link className="nav-link text-light" to="/services"> <i>{t('nos_services')}</i> </Link>
                                         </li>
                                         <li className="nav-item" >
-                                            <Link className="nav-link text-light" to="/credits" >{t('nos_credit')}</Link>
+                                            <Link className="nav-link text-light" to="/credits" ><i>{t('nos_credit')}</i> </Link>
                                         </li>
                                         <li className="nav-item">
-                                            <Link className="nav-link text-light" to="#">CASHILY</Link>
+                                            <Link className="nav-link text-light" to="#"> <i>{t(('cashily'))}</i> </Link>
                                         </li>
                                         <li className="nav-item">
-                                            <Link className="nav-link text-light" to="/contacts">{t('contact')}</Link>
+                                            <Link className="nav-link text-light" to="/contacts" > <i>{t('contact')} </i></Link>
+                                        </li>
+                                        <li className='m-1'>
+                                            <div className='dropdown'>
+                                                    <button className='btn btn-link dropdown-toggle'
+                                                    type='button'
+                                                    id='dropdownMenuButton1'
+                                                    data-bs-toggle="dropdown"
+                                                    aria-expanded ="false"
+                                                    >
+                                                            <GlobeIcon />
+                                                    </button>
+                                                    <ul className='dropdown-menu' aria-labelledby='dropdownMenuButton1'>
+                                                        {/* <li className='dropdown-item-text' >{t(['langue'])} </li> */}
+                                                        {languages.map(({code,name,country_code})=>(
+
+                                                            <li key={country_code}>
+                                                                <button className='dropdown-item' onClick={()=>i18next.changeLanguage(code)} disabled={code===currentLanguageCode}>
+                                                                    {/* <span className={`flag-icon flag-icon-${country_code} max-2`}
+                                                                    style={{opacity: code===currentLanguageCode ? 0.5 :1}}>
+
+                                                                    </span> */}
+                                                                    {name}
+                                                                </button>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
                                         </li>
                                     </ul>
                                 </div>
