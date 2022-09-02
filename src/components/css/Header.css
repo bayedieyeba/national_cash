@@ -12,14 +12,14 @@ nav .navbar-collapse.collapse{
         overflow: hidden;
     }
     nav .navbar-collapse.active{
-        height: 100vh !important;
+        height: 80vh !important;
     }
 }
 nav .navbar-collapse{
     transition: .6s all ease-in-out;
     height: 0 !important;
 }
-.header{ 
+/* .header{ 
 
 }
 @media screen and (max-width:1200px) {
@@ -32,20 +32,35 @@ nav .navbar-collapse{
     .header{
         width: 250%;
     }
-}
-a:hover {
-
-  min-width: 80%;
-  cursor: pointer;
-  /* margin-right: 0.25em;
-  margin-top: 0.5em;
-  padding: 	0px; */
-  /* border: none; */
-  border-radius: 10px;
-  background-color: #003d6a;
-  color:white;
-
+} */
+@media screen and (max-width:1200px) {
+    .header{
+        width: 1300%;
+    }
   }
-.link_hover :hover {
-    color: white;
-}
+  
+  @media screen and (max-width:600px) {
+    .header{
+        width: 250%;
+    }
+  }
+
+.btn_header{
+    
+ }
+ 
+ .btn_header:hover {
+    border: 1px solid #ddd;
+    background-color: #003d6a;
+    padding: 5px 5px 5px 5px ;
+    border-radius: 10px;
+     
+     -o-transition: background-color .2s ease-in; 
+     -moz-transition: background-color .2s ease-in;
+     -webkit-transition: background-color .2s ease-in; 
+     transition: background-color .2s ease-in;     
+ }
+ 
+ .btn_header:active {
+     background-color: white;
+ }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {useTranslation} from "react-i18next";
 import ces from '../images/left.png'
-import creditEquip from '../images/creditEquip.png';
+
 const CreditEquipmentS = () => {
     const {t} =useTranslation()
     const [lireSuite,setLireSuite] = useState(false)
@@ -20,14 +20,15 @@ const CreditEquipmentS = () => {
                                                 width:'400px'
                                                 
                                                 }}>
-                                            <p style={{textAlign:'center',padding:'85px', fontSize :'40px',  fontFamily:'Roboto',fontWeight:'bold' ,color:'#003d6a'}}> {t('nom_credit_equipement')} </p>
+                                            <p style={{textAlign:'center',padding:'75px', fontSize :'40px',  fontFamily:'Roboto ,sans-serif',fontWeight:'bold' ,color:'#003d6a'}}> {t('nom_credit_equipement')} </p>
                                         
                                         </div>
                                 {/* <img src={creditEquip} style={{height:'400px',width:'400px',display: 'block;',marginLeft:' auto;', marginRight: 'auto;'}} alt="" /> */}
                              
                             </div>
-                            <div className=''><p style={{padding:'60px',color:'rgb(5, 5, 125)'}} > {t('description1_equipement')}
-                            {hiddButton && <button onClick={handleClick} className='myButton' >LIRE LA SUITE</button>}
+                            <div className='m-4'><p style={{padding:'60px',color:'#003d6a'}} > {t('description1_equipement')}
+                            &nbsp; &nbsp;
+                            {hiddButton && <button onClick={handleClick} className='btn_inscrir'  style={{color:'white'}} >LIRE LA SUITE</button>}
                             {lireSuite && 
                             <div>
                              <p>{t('description2_equipement')} </p>

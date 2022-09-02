@@ -17,7 +17,7 @@ i18n
   .init({
     supportedLngs :["en","fr","ar"],
     //lng: document.querySelector('html').lang, // if you're using a language detector, do not define the lng option
-    fallbackLng: "en",
+    fallbackLng: "fr",
     detection:{
       order:['cookie','htmlTag','localStorage','path','subdomain'],
       caches:['cookie']

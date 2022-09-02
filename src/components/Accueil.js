@@ -3,20 +3,24 @@ import Activites from './Activites';
 import Comptes from './Comptes';
 import Footer from './Footer';
 import FormulaireSouscription from './FormulaireSouscription';
-import Mission from './Mission';
+
+import Personnages from './Personnages';
 import Slider from './Slider';
+import Testimonial from './slides/Testimonial';
 
 function Accueil() {
    
     return (
       <div className=''>
-        <Slider />
+        {/* <Slider /> */}
+        <Testimonial />
          {/* <Activites /> */}
          <Comptes />
-         <Mission />
+         <Personnages />
          <FormulaireSouscription />
         <Footer />
       </div>
+      
     )
 }
 

@@ -16,3 +16,26 @@
         width: 250%;
     }
 }
+
+.btn_formulaire{
+    border: 1px solid #ddd;
+    background-color: white;
+    padding: 6px 7px 6px 7px ;
+    font-size: 15px;
+    border-radius: 7px;
+     
+     -o-transition: background-color .2s ease-in; 
+     -moz-transition: background-color .2s ease-in;
+     -webkit-transition: background-color .2s ease-in; 
+     transition: background-color .2s ease-in; 
+ }
+ 
+ .btn_formulaire:hover {
+     background-color: #211c1c;
+     color: white;    
+ }
+ 
+ .btn_formulaire:active {
+     background-color: #ccc;
+ }
+

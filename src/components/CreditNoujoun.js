@@ -19,14 +19,15 @@ const CreditNoujoun = () => {
                                                 width:'400px'
                                                 
                                                 }}>
-                                            <p style={{textAlign:'center',padding:'90px', fontSize :'38px',  fontFamily:'Roboto',fontWeight:'bold' ,color:'#003d6a'}}> {t('nom_credit_noujoune')} </p>
+                                            <p style={{textAlign:'center',padding:'90px', fontSize :'38px',  fontFamily:'Roboto, sans-serif',fontWeight:'bold' ,color:'#003d6a'}}> {t('nom_credit_noujoune')} </p>
                                         
                                     </div>
                                 {/* <img src={creditNoujoun} style={{height:'400px',width:'400px',display: 'block;',marginLeft:' auto;', marginRight: 'auto;'}} alt="" /> */}
                              
                             </div>
-                            <div className=''><p style={{padding:'60px',color:'rgb(5, 5, 125)'}} > {t('description1_noujoune')}
-                            {hiddButton && <button onClick={handleClick} className='myButton' >LIRE LA SUITE</button>}
+                            <div className='m-4'><p style={{padding:'60px',color:'#003d6a'}} > {t('description1_noujoune')}
+                            &nbsp; &nbsp;
+                            {hiddButton && <button onClick={handleClick} className='btn_inscrir' style={{color:'white'}} >LIRE LA SUITE</button>}
                             {lireSuite && <div>
                                         <p>{t('description2_noujoune')} </p>
                                         </div>}

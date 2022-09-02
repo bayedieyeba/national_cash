@@ -12,8 +12,9 @@ const CreditBayit = () => {
         return(
             <div className="d-flex justify-content-between p-5 mt-5 " style={{backgroundColor:'brosybrownlue'}}>
                    
-                            <div className=''><p style={{padding:'60px',color:'rgb(5, 5, 125)'}} > {t('description1_beyti')}
-                            {hiddButton && <button onClick={handleClick}className='myButton' >LIRE LA SUITE</button>}
+                            <div className='m-4'><p style={{padding:'60px',color:'#003d6a'}} > {t('description1_beyti')}
+                            &nbsp; &nbsp;
+                            {hiddButton && <button onClick={handleClick}className='btn_inscrir' style={{color:'white'}} >LIRE LA SUITE</button>}
                             {lireSuite && <div>
                                          <p>{t('description2_beyti')} </p>
                                         </div>
@@ -29,7 +30,7 @@ const CreditBayit = () => {
                                                 width:'400px'
                                                 
                                                 }}>
-                                            <p style={{textAlign:'center',padding:'100px', fontSize :'40px',  fontFamily:'Roboto',fontWeight:'bold' ,color:'#003d6a'}}> {t('nom_credit_Beyti')} </p>
+                                            <p style={{textAlign:'center',padding:'100px', fontSize :'40px',  fontFamily:'Roboto, sans-serif ',fontWeight:'bold' ,color:'#003d6a'}}> {t('nom_credit_Beyti')} </p>
                                         
                                     </div>
                                 {/* <img src={creditBayit} style={{height:'400px',width:'400px',display: 'block;',marginLeft:' auto;', marginRight: 'auto;'}} alt="" /> */}

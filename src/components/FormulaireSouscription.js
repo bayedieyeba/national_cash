@@ -32,8 +32,8 @@ const FormulaireSouscription = () => {
                             
                            </div>
                            <div className="col">
-                                <button className='btn-76'>
-                                   <span className='right m-3'>{t('button_souscription')}</span> 
+                                <button className='btn_formulaire'>
+                                   <span className=' m-3'>{t('button_souscription')}</span> 
                                 </button>
                            </div>
                     </div>

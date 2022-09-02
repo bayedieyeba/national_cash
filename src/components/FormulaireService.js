@@ -1,32 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './css/main.css'
-
+import {useNavigate } from 'react-router-dom'
+import {useTranslation} from "react-i18next";
 const FormulaireService = () => {
-    const countries = [
-        "bayit","takaful"
-    ]
-    const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
-  const [country, setCountry] = React.useState("");
-  const [acceptedTerms, setAcceptedTerms] = React.useState(false);
+  const {t} =useTranslation()
+  
+    const [email, setEmail] = useState("");
+    const [num_tel,setNumTel] = useState("")
+  const [password, setPassword] = useState("");
+  const [country, setCountry] = useState("");
+  const [acceptedTerms, setAcceptedTerms] = useState(false);
 
+  const navigate = useNavigate()
   const handleSubmit = (event) => {
-    console.log(`
-      Email: ${email}
-      Password: ${password}
-      Country: ${country}
-      Accepted Terms: ${acceptedTerms}
-    `);
-    
     event.preventDefault();
+    navigate('/services')
   }
   return (
-    <div  className=' body_div'>
+       <div style={{margin:0,padding:'15px'}}>
+            <div  className=' body_div'>
        <form  className='form_formulaire' onSubmit={handleSubmit}>
-      <h1>Create Account</h1>
+      <h1>{t('souscrir')} </h1>
 
       <label>
-      Votre nom complet:
+      {t('nom_complet')}:
         <input className=' input_form'
           name="email"
           type="text"
@@ -36,7 +33,7 @@ const FormulaireService = () => {
       </label>
       
       <label>
-        Votre Email:
+        {t('votre_mail')}:
         <input className='input_form'
           name="password"
           type="email"
@@ -45,25 +42,25 @@ const FormulaireService = () => {
           required />
       </label>
       <label>
-        Numéro de Téléphone:
+        {t('num_tel')}:
         <input className='input_form'
           name="Numero_telephone"
           type="text"
-          value={password}
-          onChange={e => setPassword(e.target.value)}
+          value={num_tel}
+          onChange={e => setNumTel(e.target.value)}
           required />
       </label>
       <label>
-        Type services:
+        {t('type_services')}:
         <select
           name="country"
           value={country}
           onChange={e => setCountry(e.target.value)}
           required>
-          <option key=""></option>
-          {countries.map(country => (
-            <option key={country}>{country}</option>
-          ))}
+          <option > {t('compte_c')} </option>
+          <option >{t('compte_dt')} </option>
+          <option >{t('compte_ep')} </option>
+          
         </select>
       </label>
 
@@ -73,12 +70,13 @@ const FormulaireService = () => {
           type="checkbox"
           onChange={e => setAcceptedTerms(e.target.value)}
           required />
-        I accept the terms of service        
+        {t('accepte_terme')}        
       </label>
 
-      <button type='button' className='button_formulaire' >Submit</button>
+      <button type='submit' className='button_formulaire' >{t('soumettre')} </button>
     </form>
     </div>
+       </div>
   )
 }
 

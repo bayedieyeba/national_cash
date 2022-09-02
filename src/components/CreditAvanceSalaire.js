@@ -11,8 +11,9 @@ const CreditAvanceSalire = () => {
     }
         return(
             <div className="d-flex justify-content-between p-5 mt-5 " style={{backgroundColor:'brosybrownlue'}}>
-                            <div className=''><p style={{padding:'60px',color:'rgb(5, 5, 125)'}} > {t('description1_avance_salaire')}
-                            {hiddButton && <button onClick={handleClick} className='myButton'>LIRE LA SUITE</button>}
+                            <div className='m-4'><p style={{padding:'60px',color:'#003d6a'}} > {t('description1_avance_salaire')}
+                            &nbsp; &nbsp;
+                            {hiddButton && <button onClick={handleClick} className='btn_inscrir' style={{color:'white'}} >LIRE LA SUITE</button>}
                             {lireSuite &&
                             <div>
                                 <p>{t('description2_avance_salaire')} </p>
@@ -29,7 +30,7 @@ const CreditAvanceSalire = () => {
                                                 width:'400px'
                                                 
                                                 }}>
-                                            <p style={{textAlign:'center',padding:'85px', fontSize :'40px',  fontFamily:'Roboto',fontWeight:'bold' ,color:'#003d6a'}}> {t('nom_credit_avance_salaire')} </p>
+                                            <p style={{textAlign:'center',padding:'80px', fontSize :'40px',  fontFamily:'Roboto, sans-serif',fontWeight:'bold' ,color:'#003d6a'}}> {t('nom_credit_avance_salaire')} </p>
                                         
                                         </div>
                              

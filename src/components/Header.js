@@ -43,14 +43,14 @@ const Header = () => {
     const [show, setShow] =useState(true)
   return (
     <div className='header'>
-           <nav className="fixed-top  navbar navbar-expand-lg navbar-dark bg-white">
+           <nav className="fixed-top  navbar navbar-expand-lg navbar-dark bg-white py-1 p-1">
                 <div className="container ">
                         <div className='d-flex justify-content-between'>
                             <div className='d-flex justify-content-start'>
                                     <div className='d-flex justify-content-between mx-4'>
                                         <div className='d-flex flex-column  m-2'>
-                                            <p style={{color:'blue', fontWeight:'bold'}}>{t('titre_logo')} </p>
-                                            <img src={nc} style={{height:'40px',width:'210px'}} alt="" />
+                                            <p style={{color:'#003d6a', fontWeight:'bold'}}>{t('titre_logo')} </p>
+                                            <img src={nc} style={{height:'40px',width:'230px'}} alt="" />
                                         </div>
                                         
                                     </div>
@@ -73,19 +73,19 @@ const Header = () => {
                                  <div className={show ? 'collapse navbar-collapse' : 'collapse navbar-collapse active'}>
                                     <ul className="navbar-nav ms-auto">
                                         <li className="nav-item">
-                                            <Link className="nav-link text-light" to="/"> <i >{t('accueil')}</i> </Link>
+                                            <Link className="nav-link text-light" to="/"> <i className='btn_header' >{t('accueil')}</i> </Link>
                                         </li>
                                         <li className="nav-item">
-                                            <Link className="nav-link text-light" to="/services"> <i>{t('nos_services')}</i> </Link>
+                                            <Link className="nav-link text-light" to="/services"> <i className='btn_header'>{t('nos_services')}</i> </Link>
                                         </li>
                                         <li className="nav-item" >
-                                            <Link className="nav-link text-light" to="/credits" ><i>{t('nos_credit')}</i> </Link>
+                                            <Link className="nav-link text-light" to="/credits" ><i className='btn_header' >{t('nos_credit')}</i> </Link>
                                         </li>
                                         <li className="nav-item">
-                                            <Link className="nav-link text-light" to="#"> <i>{t(('cashily'))}</i> </Link>
+                                            <Link className="nav-link text-light" to="/cashily"  > <i className='btn_header'  >{t(('cashily'))}</i> </Link>
                                         </li>
                                         <li className="nav-item">
-                                            <Link className="nav-link text-light" to="/contacts" > <i>{t('contact')} </i></Link>
+                                            <Link className="nav-link text-light" to="/contacts" > <i className='btn_header'>{t('contact')} </i></Link>
                                         </li>
                                         <li className='m-1'>
                                             <div className='dropdown'>
@@ -94,8 +94,9 @@ const Header = () => {
                                                     id='dropdownMenuButton1'
                                                     data-bs-toggle="dropdown"
                                                     aria-expanded ="false"
+                                                    style={{color:'#003d6a'}}
                                                     >
-                                                            <GlobeIcon />
+                                                            <GlobeIcon  />
                                                     </button>
                                                     <ul className='dropdown-menu' aria-labelledby='dropdownMenuButton1'>
                                                         {/* <li className='dropdown-item-text' >{t(['langue'])} </li> */}
