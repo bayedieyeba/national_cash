@@ -7,33 +7,20 @@ nav{
 nav .navbar-collapse.collapse{
     display: block;
 }
-@media (max-width: 991px){
+@media (max-width: 900px){
     nav .navbar-collapse.collapse{
         overflow: hidden;
     }
     nav .navbar-collapse.active{
-        height: 80vh !important;
+        height: 300px !important;
     }
 }
 nav .navbar-collapse{
     transition: .6s all ease-in-out;
     height: 0 !important;
 }
-/* .header{ 
 
-}
-@media screen and (max-width:1200px) {
-    .header{
-        width: 1300%;
-    }
-}
-
-@media screen and (max-width:600px) {
-    .header{
-        width: 250%;
-    }
-} */
-@media screen and (max-width:1200px) {
+/* @media screen and (max-width:1200px) {
     .header{
         width: 1300%;
     }
@@ -43,7 +30,19 @@ nav .navbar-collapse{
     .header{
         width: 250%;
     }
-  }
+  } */
+
+  @media screen and (max-width:1200px) {
+    .header{
+        width: 1300%;
+    }
+}
+
+@media screen and (max-width:991px) {
+    .header{
+        width: 250%;
+    }
+}
 
 .btn_header{
     

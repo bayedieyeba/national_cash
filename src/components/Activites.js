@@ -7,7 +7,7 @@ const Activites = () => {
     const {t} =useTranslation()
     return (
         <div 
-         className='row justify-content-center custom-line p-4 activites '>
+         className='row justify-content-center custom-line p-4  '>
             <Bounce top>
                 <h1 className=' ' style={{textAlign:'center',color:'white'}} >{t('titre_valeur')} </h1>
             </Bounce>

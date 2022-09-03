@@ -1,13 +1,13 @@
-
-import Back from '../images/back.png';
+import popup1 from '../images/popup1.png';
+import popup2 from '../images/popup2.png';
 export default [
     {
-    urls:Back
+    urls:popup1,
+    
   },
   {
-    urls:Back
+    urls:popup2,
+    
   },
-  {
-    urls:Back
-  }
+ 
 ]

@@ -42,7 +42,7 @@ const Header = () => {
     }, [currentLanguage])
     const [show, setShow] =useState(true)
   return (
-    <div className='header'>
+    <div className=''>
            <nav className="fixed-top  navbar navbar-expand-lg navbar-dark bg-white py-1 p-1">
                 <div className="container ">
                         <div className='d-flex justify-content-between'>

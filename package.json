@@ -4,6 +4,7 @@
   "homepage": "https://nc.aeservices.digital/",
   "private": true,
   "dependencies": {
+    "@chakra-ui/react": "^2.3.1",
     "@googlemaps/react-wrapper": "^1.1.35",
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
@@ -26,6 +27,7 @@
     "react": "^18.2.0",
     "react-alice-carousel": "^2.6.4",
     "react-animated-slider": "^2.0.0",
+    "react-awesome-slider": "^4.1.0",
     "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",
     "react-elastic-carousel": "^0.11.5",
@@ -33,7 +35,9 @@
     "react-i18next": "^11.18.5",
     "react-icons": "^4.4.0",
     "react-normalize": "^0.4.4",
+    "react-owl-carousel": "^2.3.3",
     "react-places-autocomplete": "^7.3.0",
+    "react-responsive-carousel": "^3.2.23",
     "react-reveal": "^1.2.2",
     "react-scripts": "5.0.1",
     "react-simple-image-slider": "^2.4.1",
@@ -42,6 +46,7 @@
     "reactjs-popup": "^2.0.5",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.5",
+    "swiper": "^8.3.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

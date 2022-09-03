@@ -9,6 +9,7 @@ import back from '../../images/back.png';
 import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons";
 import { FiEye } from "react-icons/fi";
 import Slide from 'react-reveal/Slide';
+import Activites from '../Activites'
 
 const PreviousBtn = (props) => {
     console.log(props);
@@ -53,6 +54,7 @@ const Testimonial = () => {
             {/* <div>
                 
             </div> */}
+            <Activites />
             <Card text={t('rigueur')} text_description={t('text_rigueur')} titre={t('titre_valeur')} />
             <Card text={t('equite')} text_description={t('text_equite')} titre={t('titre_valeur')} />
             <Card text={t('excellence')} text_description={t('text_excellence')} titre={t('titre_valeur')} />

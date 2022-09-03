@@ -52,7 +52,7 @@ const Footer = () => {
 
     return (
       
-            <div className='footer '  style={{
+            <div className='footer'  style={{
                 color: "#f5f5f5",
                 
                 }}>
@@ -84,31 +84,36 @@ const Footer = () => {
                         <p style={{marginBottom:10, color:'white',color:'white',textAlign:'center',fontSize:'40px',fontWeight:'bold'}} > NOS LOCAUX</p>
                     </Fade>
                     <Fade left>
-                     <div className='d-flex justify-content-around  '>
+                     <div className='d-flex justify-content-center  '>
                         
-                                <div className=''> 
-                                    
+                                <div className='m-1'> 
+                                    <div className='card'>
+                                        <p style={{color:'black',textAlign:'center',fontSize:'21px',fontFamily:'Roboto,sans-serif'}} className=" m-1">Rome، Nouakchott, Mauritanie</p>
                                     <iframe id="iframeId" height="180px" width="200%" > </iframe>
+                                    </div>
                                 </div>
-                                <div className=''> 
-                                
+                                <div className='m-1'> 
+                                <div className='card'>
+                                        <p style={{color:'black',textAlign:'center',fontSize:'21px',fontFamily:'Roboto,sans-serif'}} className=" m-1">Moktar Ould El Maydah, Nouakchott, Mauritanie</p>
                                     <iframe id="iframeId2" height="180px" width="200%"></iframe>
-                                    
+                                </div>  
                                 </div>
-                                <div className=''> 
-                                
+                                <div className='m-1'> 
+                                <div className='card'>
+                                        <p style={{color:'black',textAlign:'center',fontSize:'21px',fontFamily:'Roboto,sans-serif'}} className=" m-1">Toujounine, Nouakchott, Mauritanie</p>
                                     <iframe id="iframeId3" height="180px" width="200%"></iframe>
-                                    
+                                    </div>
                                 </div>
-                                <div className=''> 
-                                
+                                <div className='m-1'> 
+                                <div className='card'>
+                                        <p style={{color:'black',textAlign:'center',fontSize:'21px',fontFamily:'Roboto,sans-serif'}} className=" m-1">Ali Ibn Abi Taleb، Nouakchott, Mauritanie</p>
                                     <iframe id="iframeId4" height="180px" width="200%"></iframe>
-                    
+                                    </div>
                                 </div>
                         </div>
                     </Fade>
                  </div>
-                <div className='footerbottom' style={{
+                <div className='' style={{
                     backgroundImage: `url(${back})`,
                     backgroundSize: "cover",
                     height: "40vh",
