@@ -1,13 +1,14 @@
 .cashily{
-
+  padding: 50px;
 }
 @media screen and (max-width:1200px) {
     .cashily{
         width: 1300%;
+       
     }
   }
   
-  @media screen and (max-width:600px) {
+  @media screen and (max-width:700px) {
     .cashily{
         width: 250%;
     }

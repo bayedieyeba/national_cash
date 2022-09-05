@@ -1,0 +1,15 @@
+.formulaireService{
+    
+}
+
+@media screen and (max-width:1200px) {
+    .formulaireService{
+        width: 1300%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .formulaireService{
+        width: 250%;
+    }
+}

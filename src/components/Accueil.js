@@ -30,16 +30,17 @@ function Accueil() {
 },[])
     return (
       <div className=''>
-        <div>
+        {/* <div>
+          
             <Popup trigger={buttonPopup} setTrigger={setButtonPopup} >
-            {/* <Slider />  */}
+            
             <Slider {...settings}   >
             <img src={popup1} alt="" className="m-3" style={{width:'500px',height:'390px'}} />
             <img src={popup2} alt="" className="m-3" style={{width:'500px',height:'390px'}} />
             </Slider>
                 
             </Popup >
-         </div>
+         </div> */}
         {/* <MySlide /> */}
         <Testimonial />
         {/* <Slider /> */}

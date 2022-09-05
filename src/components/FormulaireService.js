@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './css/main.css'
+import './css/formulaireServices.css'
 import {useNavigate } from 'react-router-dom'
 import {useTranslation} from "react-i18next";
 const FormulaireService = () => {
@@ -17,7 +18,7 @@ const FormulaireService = () => {
     navigate('/services')
   }
   return (
-       <div style={{margin:0,padding:'15px'}}>
+       <div className='formulaireService' style={{margin:0,padding:'15px'}}>
             <div  className=' body_div'>
        <form  className='form_formulaire' onSubmit={handleSubmit}>
       <h1>{t('souscrir')} </h1>
