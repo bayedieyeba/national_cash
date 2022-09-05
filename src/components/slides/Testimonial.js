@@ -10,6 +10,10 @@ import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons";
 import { FiEye } from "react-icons/fi";
 import Slide from 'react-reveal/Slide';
 import Activites from '../Activites'
+import Rigueur from '../Activites/Rigueur'
+import Equite from '../Activites/Equite'
+import Execellence from '../Activites/Excellence'
+import Respect from '../Activites/Respect'
 
 const PreviousBtn = (props) => {
     console.log(props);
@@ -44,7 +48,7 @@ const Testimonial = () => {
       };
   return (
     <div className='testmonial p-4 respons' style={{display :"flex",justifyContent : "center", marginTop:100,backgroundImage: `url(${back})`,backgroundSize: "cover"}}>
-        <div style={{width : '70%', textAlign:'center'}} >
+        <div style={{width : '80%', textAlign:'center'}} >
            
         <Slider {...settings}   >
             <div className='m-2'>
@@ -55,10 +59,10 @@ const Testimonial = () => {
                 
             </div> */}
             <Activites />
-            <Card text={t('rigueur')} text_description={t('text_rigueur')} titre={t('titre_valeur')} />
-            <Card text={t('equite')} text_description={t('text_equite')} titre={t('titre_valeur')} />
-            <Card text={t('excellence')} text_description={t('text_excellence')} titre={t('titre_valeur')} />
-            <Card text={t('respect')} text_description={t('text_respect')} titre={t('titre_valeur')} />
+            <Rigueur />
+            <Equite />
+            <Execellence />
+            <Respect />
             <Card text={t('vision')} text_description={t('text_vision')} titre={t('titre_vision')} />
             <Card text={t('mission')} text_description={t('text_mission')} titre={t('titre_mision')} />
 

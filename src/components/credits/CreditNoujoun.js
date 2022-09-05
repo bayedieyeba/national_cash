@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import {useTranslation} from "react-i18next";
-import cn from '../images/left.png'
+import cn from '../../images/left.png'
 const CreditNoujoun = () => {
     const {t} =useTranslation()
     const [lireSuite,setLireSuite] = useState(false)

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {useTranslation} from "react-i18next";
 
-import cm from '../images/left.png'
+import cm from '../../images/left.png'
 const CreditMaw = () => {
     const {t} =useTranslation()
     const [lireSuite,setLireSuite] = useState(false)

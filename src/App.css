@@ -82,6 +82,7 @@
 
 .circle {
   width: 130px;
+  margin-left: 50px;
   height: 130px;
   line-height: 130px;
   border-radius: 50%;

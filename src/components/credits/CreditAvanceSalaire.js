@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {useTranslation} from "react-i18next";
-import ct from '../images/left.png'
-const CreditTakaful = () => {
+import cas from '../../images/left.png'
+const CreditAvanceSalire = () => {
     const {t} =useTranslation()
     const [lireSuite,setLireSuite] = useState(false)
     const [hiddButton,setHiddButton] = useState(true)
@@ -11,12 +11,12 @@ const CreditTakaful = () => {
     }
         return(
             <div className="d-flex justify-content-between p-5 mt-5 " style={{backgroundColor:'brosybrownlue'}}>
-                            <div className='m-4'><p style={{padding:'60px',color:'#003d6a'}} > {t('description1_takaful')}
+                            <div className='m-4'><p style={{padding:'60px',color:'#003d6a'}} > {t('description1_avance_salaire')}
                             &nbsp; &nbsp;
-                            {hiddButton && <button onClick={handleClick} className='btn_inscrir' style={{color:'white'}}>LIRE LA SUITE</button>}
+                            {hiddButton && <button onClick={handleClick} className='btn_inscrir' style={{color:'white'}} >LIRE LA SUITE</button>}
                             {lireSuite &&
                             <div>
-                            <p>{t('description2_takaful')} </p>
+                                <p>{t('description2_avance_salaire')} </p>
                             </div> 
                             }
                             </p> 
@@ -24,16 +24,15 @@ const CreditTakaful = () => {
                            </div>
                             <div className='m-4'>
                             <div className='footerbottom' style={{
-                                                backgroundImage: `url(${ct})`,
+                                                backgroundImage: `url(${cas})`,
                                                 backgroundSize: "cover",
                                                 height:'400px',
                                                 width:'400px'
                                                 
                                                 }}>
-                                            <p style={{textAlign:'center',padding:'90px', fontSize :'40px',  fontFamily:'Roboto,sans-serif',fontWeight:'bold' ,color:'#003d6a'}}> {t('nom_credit_takaful')} </p>
+                                            <p style={{textAlign:'center',padding:'80px', fontSize :'40px',  fontFamily:'Roboto, sans-serif',fontWeight:'bold' ,color:'#003d6a'}}> {t('nom_credit_avance_salaire')} </p>
                                         
                                         </div>
-                                {/* <img src={creditTakaful} style={{height:'400px',width:'400px',display: 'block;',marginLeft:' auto;', marginRight: 'auto;'}} alt="" /> */}
                              
                             </div>
 
@@ -41,4 +40,4 @@ const CreditTakaful = () => {
         )
         
       }
-export default CreditTakaful
+export default CreditAvanceSalire

@@ -1,6 +1,6 @@
 import React from "react";
-import k9 from '../images/K9.png'
-
+import k9 from '../images/K9.png' 
+import samba from '../images/samba.jpeg'
 import {
   MDBCarousel,
   MDBCarouselInner,
@@ -19,7 +19,7 @@ export default function Personnages() {
           <MDBCarouselItem className="active text-center">
             
             <img
-              src={k9}
+              src={samba}
               alt="avatar"
               className="rounded-circle shadow-1-strong mb-4"
               style={{ width: "130px" }}
@@ -55,7 +55,7 @@ Il est diplômé d’un DESS en « Audit Comptable, Financier et Fiscal » de 
             </ul>
           </MDBCarouselItem>
 
-          {/* <MDBCarouselItem className="text-center">
+          <MDBCarouselItem className="text-center">
             <img
               src={k9}
               alt="avatar"
@@ -65,15 +65,10 @@ Il est diplômé d’un DESS en « Audit Comptable, Financier et Fiscal » de 
             <MDBRow className="d-flex justify-content-center">
               <MDBCol lg="8">
                 <h5 className="mb-3" style={{color:'#003d6a'}}>Sidy</h5>
-                <p style={{color:'#003d6a'}}>Directeur</p>
+                <p style={{color:'#003d6a'}}>Actionnaire</p>
                 <p className="text-muted">
                   <MDBIcon fas icon="quote-left" className="pe-2" />
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
-                  et deleniti nesciunt sint eligendi reprehenderit reiciendis.
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
-                  et deleniti nesciunt sint eligendi reprehenderit reiciendis,
-                  quibusdam illo, beatae quia fugit consequatur laudantium velit
-                  magnam error. Consectetur distinctio fugit doloremque.
+                  Sidi Mohamed ICHIDOU est l’actionnaire unique avec 100% du capital
                 </p>
               </MDBCol>
             </MDBRow>
@@ -94,7 +89,7 @@ Il est diplômé d’un DESS en « Audit Comptable, Financier et Fiscal » de 
                 <MDBIcon far icon="star" size="sm" />
               </li>
             </ul>
-          </MDBCarouselItem> */}
+          </MDBCarouselItem>
         </MDBCarouselInner>
       </MDBCarousel>
     </MDBContainer>

@@ -81,32 +81,37 @@ const Footer = () => {
                 </div> */}
                <div style={{backgroundColor:'#003d6a'}}>
                    <Fade right>
-                        <p style={{marginBottom:10, color:'white',color:'white',textAlign:'center',fontSize:'40px',fontWeight:'bold'}} > NOS LOCAUX</p>
+                        <p style={{marginBottom:10, color:'white',color:'white',textAlign:'center',fontSize:'40px',fontWeight:'bold'}} >{t('reseaux')} </p>
+                        <p style={{marginBottom:10, color:'white',color:'white',textAlign:'center',fontSize:'25px'}}>{t('agences')} </p>
                     </Fade>
                     <Fade left>
                      <div className='d-flex justify-content-center  '>
                         
                                 <div className='m-1'> 
-                                    <div className='card'>
-                                        <p style={{color:'black',textAlign:'center',fontSize:'21px',fontFamily:'Roboto,sans-serif'}} className=" m-1">Rome، Nouakchott, Mauritanie</p>
+                                    <div className='card' style={{backgroundColor:"#e89059"}}>
+                                        <p style={{color:'black',textAlign:'center',fontSize:'21px',fontFamily:'Roboto,sans-serif'}} className=" m-1">Agence CENTRALE</p>
+                                        <p style={{textAlign:'center', color:'black'}}>Tel : 43 67 78 58</p>
                                     <iframe id="iframeId" height="180px" width="200%" > </iframe>
                                     </div>
                                 </div>
                                 <div className='m-1'> 
-                                <div className='card'>
-                                        <p style={{color:'black',textAlign:'center',fontSize:'21px',fontFamily:'Roboto,sans-serif'}} className=" m-1">Moktar Ould El Maydah, Nouakchott, Mauritanie</p>
+                                <div className='card' style={{backgroundColor:"#e89059"}}>
+                                        <p style={{color:'black',textAlign:'center',fontSize:'21px',fontFamily:'Roboto,sans-serif'}} className=" m-1">Agence CHARBON </p>
+                                        <p style={{textAlign:'center', color:'black'}}>Tel : 30 71 49 82</p>
                                     <iframe id="iframeId2" height="180px" width="200%"></iframe>
                                 </div>  
                                 </div>
                                 <div className='m-1'> 
-                                <div className='card'>
-                                        <p style={{color:'black',textAlign:'center',fontSize:'21px',fontFamily:'Roboto,sans-serif'}} className=" m-1">Toujounine, Nouakchott, Mauritanie</p>
+                                <div className='card' style={{backgroundColor:"#e89059"}}>
+                                        <p style={{color:'black',textAlign:'center',fontSize:'21px',fontFamily:'Roboto,sans-serif'}} className=" m-1">Agence TOUJOUNI</p>
+                                        <p style={{textAlign:'center', color:'black'}}>Tel : 42 56 34 17</p>
                                     <iframe id="iframeId3" height="180px" width="200%"></iframe>
                                     </div>
                                 </div>
                                 <div className='m-1'> 
-                                <div className='card'>
-                                        <p style={{color:'black',textAlign:'center',fontSize:'21px',fontFamily:'Roboto,sans-serif'}} className=" m-1">Ali Ibn Abi Taleb، Nouakchott, Mauritanie</p>
+                                <div className='card' style={{backgroundColor:"#e89059"}}>
+                                        <p style={{color:'black',textAlign:'center',fontSize:'21px',fontFamily:'Roboto,sans-serif'}} className=" m-1">Agence POINT CHAUD </p>
+                                        <p style={{textAlign:'center', color:'black'}}>Tel : 43 70 62 68</p>
                                     <iframe id="iframeId4" height="180px" width="200%"></iframe>
                                     </div>
                                 </div>
@@ -116,7 +121,7 @@ const Footer = () => {
                 <div className='' style={{
                     backgroundImage: `url(${back})`,
                     backgroundSize: "cover",
-                    height: "40vh",
+                    height: "20vh",
                     color: "#f5f5f5"
                     }}>
                         
@@ -145,8 +150,8 @@ const Footer = () => {
                             </Slide>
                             {/* <div className="v-line2"></div> */}
                             <Slide bottom>
-                            <div className='d-flex flex-column mt-5 mx-5'>
-                            <p style={{fontWeight:'bold',fontSize:'20px',textAlign:'center'}}>{t('suivre')} </p>
+                            <div className='d-flex flex-column mt-4 mx-4'>
+                            <p   style={{fontWeight:'bold',fontSize:'20px',textAlign:'center', marginLeft:'40px'}}>{t('suivre')} </p>
                                 <div className='d-flex justify-content-between'>
                                    <a href='https://www.facebook.com/ncash18'><FaFacebookF style={{color:'white',fontSize:'20px'}}/> </a>
                                    <a href='https://instagram.com/national___cash?igshid=YmMyMTA2M2Y='><AiFillInstagram style={{color:'white',fontSize:'20px'}}/></a>

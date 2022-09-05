@@ -1,9 +1,9 @@
 {
-    "accueil": "HOME",
-    "nos_services" :"OUR SERVICES",
-    "nos_credit" : " LOANS",
-    "cashily" : "CASHILY",
-    "contact" : "CONTACT US",
+    "accueil": "Home",
+    "nos_services" :"Our Services",
+    "nos_credit" : " Loans",
+    "cashily" : "Cashily",
+    "contact" : "Contact US",
     "titre_logo" :"For Islamic microfinance",
     "titre_valeur":"OUR VALUES",
     "langue":"language",
@@ -45,7 +45,10 @@
     "cc_partie1":"Mandatory basic product for any customer. It is used as a support for payments, withdrawals, transfers, debits and payments, cheque cashing, loan refunds and revenue domiciliation’s.",
     "cc_partie2":"Unlimited payments and withdrawals;Opening: 500 MRU for natural persons and 1,000 MRU for legal persons; Monthly account maintenance fee of 20 MRU for natural persons and 50 MRU for legal Person.",
     "depot_terme1":"Product is remunerated at a rate agreed between the customer and National Cash, which are committed in agreed partnership terms.",
-    "depot_terme2":"Amount remains locked in the account until contract expiry;Minimum amount: 50,000 MRUMargin: Advantageous and negotiable ratesPossibility of withdrawals in case of urgent need.",
+    "depot_terme2":"Amount remains locked in the account until contract expiry",
+    "depot_terme3":"Minimum amount: 50000 MRU",
+    "depot_terme4" : "Possibility of withdrawals in case of urgent need",
+    "depot_terme5": "MRUMargin: Advantageous and negotiable ratesPossibility of withdrawals in case of urgent need",
     "plan_epargne1" : "Product is remunerated at a rate agreed between the customer and National Cash, which are committed in agreed partnership terms.Amount remains locked in the account until contract expiry;",
     "plan_epargne2" : "Minimum amount: 50,000 MRUMargin: Advantageous and negotiable rates Possibility of withdrawals in case of urgent need.",
     "nom_cc" : "CURRENT ACCOUNT(CA)",
@@ -77,7 +80,9 @@
     "text_vision" : "The strategic vision of National Cash in the medium and long term   to guide the actions of all actors is:  Becoming  an institution of digital Islamic micro finance, professional, close to its clients and among the leaders in Mauritania.;",
     "titre_mision":"MISSION",
     "mission" : "MISSION",
-    "text_mission" : "Offering financial and non-financial services, innovative assistance. and well adapted to  needs and realities of the population all over the national territory. "
+    "text_mission" : "Offering financial and non-financial services, innovative assistance. and well adapted to  needs and realities of the population all over the national territory.",
+    "reseaux" : "Agency network",
+    "agences": ""
     
     
 }

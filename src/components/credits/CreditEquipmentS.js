@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import {useTranslation} from "react-i18next";
-import ces from '../images/left.png'
+import ces from '../../images/left.png'
 
 const CreditEquipmentS = () => {
     const {t} =useTranslation()

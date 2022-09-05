@@ -18,7 +18,7 @@ const FormulaireService = () => {
     navigate('/services')
   }
   return (
-       <div className='formulaireService' style={{margin:0,padding:'15px'}}>
+       <div className='formulaireService' style={{marginRight:"10px",padding:'30px'}}>
             <div  className=' body_div'>
        <form  className='form_formulaire' onSubmit={handleSubmit}>
       <h1>{t('souscrir')} </h1>
@@ -77,7 +77,7 @@ const FormulaireService = () => {
       <button type='submit' className='button_formulaire' >{t('soumettre')} </button>
     </form>
     </div>
-       </div>
+    </div>
   )
 }
 
