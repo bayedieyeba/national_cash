@@ -56,7 +56,7 @@ const Comptes = () => {
     return (
         <div className='comptes'>
             <Popup trigger={buttonPopup} setTrigger={setButtonPopup} >
-            <div className='formulaireService' style={{margin:0,padding:'15px'}}>
+            <div className='formulaireService' style={{margin:0,padding:'30px'}}>
             <div  className=' body_div'>
                 <form  className='form_formulaire' onSubmit={handleSubmit}>
                 <h1>{t('souscrir')} </h1>
@@ -113,6 +113,7 @@ const Comptes = () => {
                 </label>
 
                 <button type='submit' className='button_formulaire' >{t('soumettre')} </button>
+                <button onClick={()=> setButtonPopup(false)}  className='button_formulaire_annuler' >{t('annuler')} </button>
                 </form>
     </div>
     </div>
@@ -126,7 +127,8 @@ const Comptes = () => {
                                     {hiddButtonCC && <button type='button' className='btn_inscrir' onClick={handleClickCC} style={{color:'white'}} >{t('lire_la_suite')}</button>}
                                     {lireSuiteCC && <div>
                                          <p>{t('cc_partie2')}</p>
-                                         <a href='/souscription' className='myButton' >{t('souscription')} </a>
+                                         {/* <a href='/souscription' className='myButton' >{t('souscription')} </a> */}
+                                         <button className='myButton' onClick={handleInscrire} >{t('souscription')}</button>
                                         </div>
                                     }
                                     </p> 
@@ -196,7 +198,8 @@ const Comptes = () => {
                                         {lireSuiteCE && <div>
                                         <p>{t('plan_epargne1')}</p>
                                          
-                                         <a href='/souscription' className='myButton' onClick={handleLireMoinsCE} >{t('souscription')}  </a>
+                                         {/* <a href='/souscription' className='myButton' onClick={handleLireMoinsCE} >{t('souscription')}  </a> */}
+                                         <button className='myButton' onClick={handleInscrire} >{t('souscription')}</button>
                                         </div>
                                         }
                                         </p> 

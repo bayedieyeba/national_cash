@@ -31,6 +31,7 @@
     "compte_ep" : "project saving plan",
     "souscrir" : "Subscription",
     "soumettre" : "Submit",
+    "annuler" : "Cancel",
     "sous_titre_souscription" : "Subscribe to the newsletter to receive the latest news regularly!",
     "button_souscription": "SEND REQUEST",
     "titre_contact" : "OUR CONTACTS",
@@ -82,7 +83,7 @@
     "mission" : "MISSION",
     "text_mission" : "Offering financial and non-financial services, innovative assistance. and well adapted to  needs and realities of the population all over the national territory.",
     "reseaux" : "Agency network",
-    "agences": ""
+    "agences": "As part of its proximity policy, National Cash has a network of branches composed of four (4) points of sale:"
     
     
 }

@@ -5,7 +5,6 @@ import Credits from './components/Credits';
 import Comptes from './components/Comptes';
 import Contact from './components/Contact';
 import Header from './components/Header';
-import FormulaireService from './components/FormulaireService';
 import Sticky from './components/Sticky';
 import Cashily from './components/Cashily';
 import Popup from "./components/Popup";
@@ -55,9 +54,6 @@ function App() {
             </Routes>
             <Routes>
               <Route exact path='/contacts' element={<Contact />} />
-            </Routes>
-            <Routes>
-              <Route exact path='/souscription' element={<FormulaireService />} />
             </Routes>
             <Routes>
               <Route exact path='/cashily' element={<Cashily />} />
