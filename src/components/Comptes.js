@@ -127,6 +127,8 @@ const Comptes = () => {
                                     {hiddButtonCC && <button type='button' className='btn_inscrir' onClick={handleClickCC} style={{color:'white'}} >{t('lire_la_suite')}</button>}
                                     {lireSuiteCC && <div>
                                          <p>{t('cc_partie2')}</p>
+                                         <p>{t('cc_partie3')}</p>
+                                         <p>{t('cc_partie4')}</p>
                                          {/* <a href='/souscription' className='myButton' >{t('souscription')} </a> */}
                                          <button className='myButton' onClick={handleInscrire} >{t('souscription')}</button>
                                         </div>
@@ -196,7 +198,11 @@ const Comptes = () => {
                                         &nbsp; &nbsp;
                                         {hiddButtonCE &&  <button onClick={handleClickCE} className='btn_inscrir'style={{color:'white'}} >{t('lire_la_suite')}</button>}
                                         {lireSuiteCE && <div>
-                                        <p>{t('plan_epargne1')}</p>
+                                        <p>{t('plan_epargne2')}</p>
+                                        <p>{t('plan_epargne3')}</p>
+                                        <p>{t('plan_epargne4')}</p>
+                                        <p>{t('plan_epargne5')}</p>
+                                        <p>{t('plan_epargne6')}</p>
                                          
                                          {/* <a href='/souscription' className='myButton' onClick={handleLireMoinsCE} >{t('souscription')}  </a> */}
                                          <button className='myButton' onClick={handleInscrire} >{t('souscription')}</button>

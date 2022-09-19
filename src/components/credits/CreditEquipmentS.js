@@ -32,6 +32,12 @@ const CreditEquipmentS = () => {
                             {lireSuite && 
                             <div>
                              <p>{t('description2_equipement')} </p>
+                             <p>{t('description3_equipement')} </p>
+                             <p>{t('description4_equipement')} </p>
+                             <p>{t('description5_equipement')} </p>
+                             <p>{t('description6_equipement')} </p>
+                             <p>{t('description7_equipement')} </p>
+                             <p>{t('description8_equipement')} </p>
                             </div>
                              }
                             </p> 

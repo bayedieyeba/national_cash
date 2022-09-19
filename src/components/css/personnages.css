@@ -1,0 +1,15 @@
+.personnage{
+
+}
+@media screen and (max-width:1200px) {
+    .personnage{
+        width: 1300%;
+        
+    }
+  }
+  
+  @media screen and (max-width:600px) {
+    .personnage{
+        width: 250%;
+    }
+  }

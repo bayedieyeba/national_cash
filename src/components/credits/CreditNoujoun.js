@@ -30,6 +30,9 @@ const CreditNoujoun = () => {
                             {hiddButton && <button onClick={handleClick} className='btn_inscrir' style={{color:'white'}} >LIRE LA SUITE</button>}
                             {lireSuite && <div>
                                         <p>{t('description2_noujoune')} </p>
+                                        <p>{t('description3_noujoune')} </p>
+                                        <p>{t('description4_noujoune')} </p>
+                                        <p>{t('description5_noujoune')} </p>
                                         </div>}
                             </p> 
                            

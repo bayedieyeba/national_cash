@@ -17,6 +17,10 @@ const CreditTakaful = () => {
                             {lireSuite &&
                             <div>
                             <p>{t('description2_takaful')} </p>
+                            <p>{t('description3_takaful')} </p>
+                            <p>{t('description4_takaful')} </p>
+                            <p>{t('description5_takaful')} </p>
+                            <p>{t('description6_takaful')} </p>
                             </div> 
                             }
                             </p> 

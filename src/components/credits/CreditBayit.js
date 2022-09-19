@@ -17,6 +17,11 @@ const CreditBayit = () => {
                             {hiddButton && <button onClick={handleClick}className='btn_inscrir' style={{color:'white'}} >LIRE LA SUITE</button>}
                             {lireSuite && <div>
                                          <p>{t('description2_beyti')} </p>
+                                         <p>{t('description3_beyti')} </p>
+                                         <p>{t('description4_beyti')} </p>
+                                         <p>{t('description5_beyti')} </p>
+                                         <p>{t('description6_beyti')} </p>
+                                         <p>{t('description7_beyti')} </p>
                                         </div>
                             }
                             </p> 

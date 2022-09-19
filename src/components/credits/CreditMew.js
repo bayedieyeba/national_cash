@@ -19,7 +19,9 @@ const CreditMaw = () => {
                             {hiddButton && <button onClick={handleClick} className='btn_inscrir' style={{color:'white'}} >LIRE LA SUITE</button>}
                             {lireSuite && <div>
                                         <p>{t('description2_mewelny')} </p>
-                                        
+                                        <p>{t('description3_mewelny')} </p>
+                                        <p>{t('description4_mewelny')} </p>
+                                        <p>{t('description5_mewelny')} </p>
                                         </div>}
                             </p> 
                            

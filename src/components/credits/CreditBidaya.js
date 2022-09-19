@@ -31,6 +31,11 @@ const CreditBidaya = () => {
                             {hiddButton && <button onClick={handleClick} className='btn_inscrir' style={{color:'white'}} >LIRE LA SUITE</button>}
                             {lireSuite && <div>
                                         <p>{t('description2_bidaya')} </p>
+                                        <p>{t('description3_bidaya')} </p>
+                                        <p>{t('description4_bidaya')} </p>
+                                        <p>{t('description5_bidaya')} </p>
+                                        <p>{t('description6_bidaya')} </p>
+                                        <p>{t('description7_bidaya')} </p>
                                         </div>
                             }
                             </p> 

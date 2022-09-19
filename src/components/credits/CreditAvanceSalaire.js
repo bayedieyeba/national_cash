@@ -17,6 +17,9 @@ const CreditAvanceSalire = () => {
                             {lireSuite &&
                             <div>
                                 <p>{t('description2_avance_salaire')} </p>
+                                <p>{t('description3_avance_salaire')} </p>
+                                <p>{t('description4_avance_salaire')} </p>
+                                <p>{t('description5_avance_salaire')} </p>
                             </div> 
                             }
                             </p> 
