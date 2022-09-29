@@ -55,9 +55,7 @@ const Testimonial = () => {
             <h1 style={{marginBottom:10, color:'white',color:'white',textAlign:'center',fontSize:'60px',fontWeight:'bold'}} > {t('titre1')} </h1>
             <p style={{color:'white'}} >{t('description_nc')} </p>
             </div>
-            {/* <div>
-                
-            </div> */}
+            
             <Activites />
             <Rigueur />
             <Equite />
@@ -82,12 +80,9 @@ const Card =({text,text_description,titre})=>{
             textAlign:'center',
             color:'gray',
          }} >
-           {/* <Avatar 
-           imgProps={{ style : {borderRadius : "50%"}}}
-           src={img} 
-           style={{width:120,height:120,border:'1px solid lightgray',padding:7, marginBottom:20}} /> */}
+          
           <Slide top>
-           <h1 style={{color:'white'}} >{titre}</h1>
+           <h1 style={{color:'white', marginLeft:'50px'}} >{titre}</h1>
            </Slide> 
            <div className='circle'> 
              {text}
@@ -96,11 +91,7 @@ const Card =({text,text_description,titre})=>{
            <Slide bottom>
                  <p style={{color:'white', padding:'10px'}} > {text_description} </p>
            </Slide>
-           {/* <p style={{ fontStyle:'italic',
-                    marginTop: 25
-            }}> 
-                <span style={{fontWeight : 500, color: "greenyellow"}} >Baye dieye ba</span>
-            </p>  */}
+          
         </div>
     )
 }

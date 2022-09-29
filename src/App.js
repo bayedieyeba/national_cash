@@ -9,10 +9,23 @@ import Sticky from './components/Sticky';
 import Cashily from './components/Cashily';
 import Popup from "./components/Popup";
 import { useEffect, useState } from 'react';
-import popup1 from './images/popup1.png';
-import popup2 from './images/popup2.png';
 import Slider from 'react-slick'
+import IMAGES from './components/ImagesPublicite';
+import AjouterImagePub from './components/backend/AjouterImagePub';
+import { listAll, ref ,getDownloadURL } from 'firebase/storage' 
+import {storage} from './components/backend/Firebase'
 function App() {
+  const [imageList, setImageList] = useState([])
+  const imagesLitRef = ref(storage,"images/")
+  useEffect(()=>{
+    listAll(imagesLitRef).then((response)=> {
+      response.items.forEach((item)=>{
+          getDownloadURL(item).then((url)=>{
+            setImageList((prev) => [...prev, url])
+          })
+      }) 
+    })
+  },[])
   const   settings = {
     dots: true,
     infinite: true,
@@ -24,18 +37,23 @@ function App() {
     adaptiveHeight: true
   };
   const [buttonPopup,setButtonPopup] = useState(true)
-  useEffect(()=>{
-    
-},[])
+ 
   return (
     <div>
       <div>
           
           <Popup trigger={buttonPopup} setTrigger={setButtonPopup} >
-          {/* <Slider />  */}
+          
           <Slider {...settings}   >
-          <img src={popup1} alt="" className="m-3 p-3" style={{width:'450px',height:'390px'}} />
-          <img src={popup2} alt="" className="m-3 p-3" style={{width:'450px',height:'390px'}} />
+          
+          {
+            imageList.map((url,i)=>(
+              <div key={i}>
+                  <img  src={url} alt="" className="m-3 p-3" style={{width:'450px',height:'390px'}} />
+              </div>
+              
+            ))
+          }
           </Slider>
               
           </Popup >
@@ -57,6 +75,9 @@ function App() {
             </Routes>
             <Routes>
               <Route exact path='/cashily' element={<Cashily />} />
+            </Routes>
+            <Routes>
+              <Route exact path='/upload-images' element={<AjouterImagePub />} />
             </Routes>
        </Router>
       </div>

@@ -118,9 +118,10 @@
     "mission" :"MISSION",
     "text_mission" : "Offrir des services financiers et non financiers de qualité, innovants et adaptés aux besoins et réalités des populations cibles sur toute l’étendue du territoire national ;",
     "reseaux" : "Réseau d’agences",
-    "agences": "Dans le cadre de sa politique de  proximité, National Cash est dotée d’un réseau d’agences composé de quatre (4) points de ventes que sont:",
+    "agences": "Dans le cadre de sa politique de  proximité, National Cash est dotée d’un réseau d’agences composé de quatre (5) points de ventes que sont:",
     "bio_samba" : "Mr Samba DIA dispose d’une expérience de plus de vingt-cinq  (25) ans dans le secteur de la micro finance, ce qui lui a permis de développer ses compétences et ainsi de gravir pas à pas les échelons pour occuper divers postes de responsabilités en Afrique de l’Ouest et Afrique Centrale : Il a travaillé au PAMECAS pendant 14 ans à divers niveaux de responsabilité dont dix (10) ans comme Directeur Général Adjoint. Entre 2011-2014, il est détaché à la Confédération des Institutions Financières de l’Afrique de l’Ouest (CIF)  comme Inspecteur Général pour coordonner l’audit des six faîtières. En 2014, il rejoint le Cameroun pour occuper le poste d’Administrateur Directeur Général de Pan-African savings and Loans SA  pendant cinq (05) ans avant de revenir au Sénégal où il occupera pendant quinze (15) mois le poste de Directeur Général de MICROSEN SA. Depuis janvier 2022, il assure la Direction Générale de National Cash SA.Il est diplômé d’un DESS en « Audit Comptable, Financier et Fiscal » de l’Université Cheikh Anta DIOP de Dakar et d’un DESS en «Finance d’Entreprises» de l’Université  d’Evry VAL D’ESSONE. Il est également titulaire du certificat «Expert en Microfinance» de de la Frankfurt School of Finance & Management",
-    "titre_bio" : "Présentation du Directeur Général Adjoint"
+    "titre_bio" : "Présentation du Directeur Général Adjoint",
+    "choix_service" : "Choix service"
     
     
 }

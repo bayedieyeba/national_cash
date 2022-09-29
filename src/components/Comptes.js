@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import {useTranslation} from "react-i18next";
+import emailjs from 'emailjs-com'
 import '../components/css/compte.css'
 import Fade from 'react-reveal/Fade'
 import Flash from 'react-reveal/Flash';
@@ -43,15 +44,25 @@ const Comptes = () => {
     const handleInscrire =()=> {
         setButtonPopup(true)
     }
-    const [email, setEmail] = useState("");
+    const [fullName, setFullName] = useState("");
     const [num_tel,setNumTel] = useState("")
-  const [password, setPassword] = useState("");
-  const [country, setCountry] = useState("");
-  const [acceptedTerms, setAcceptedTerms] = useState(false);
+    const [email, setEmail] = useState("");
+    const [service, setService] = useState("");
+    const [acceptedTerms, setAcceptedTerms] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    emailjs.sendForm('service_1oy0vni','template_symeyz4', event.target,"GleaL7hyov49trCfd","ZNzBV4_R6trMzn_aDUWz8")
+    .then(res=>{
+        console.log(res)
+    }).catch(err=>console.log(err))
+
     setButtonPopup(false)
+    setAcceptedTerms(false)
+    setEmail("")
+    setFullName("")
+    setService("")
+    setNumTel("")
   }
     return (
         <div className='comptes'>
@@ -64,26 +75,26 @@ const Comptes = () => {
                 <label>
                 {t('nom_complet')}:
                     <input className=' input_form'
-                    name="email"
+                    name="fullName"
                     type="text"
-                    value={email}
-                    onChange={e => setEmail(e.target.value)}
+                    value={fullName}
+                    onChange={e => setFullName(e.target.value)}
                     required />
                 </label>
                 
                 <label>
                     {t('votre_mail')}:
                     <input className='input_form'
-                    name="password"
+                    name="email"
                     type="email"
-                    value={password}
-                    onChange={e => setPassword(e.target.value)}
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
                     required />
                 </label>
                 <label>
                     {t('num_tel')}:
                     <input className='input_form'
-                    name="Numero_telephone"
+                    name="num_tel"
                     type="text"
                     value={num_tel}
                     onChange={e => setNumTel(e.target.value)}
@@ -92,13 +103,14 @@ const Comptes = () => {
                 <label>
                     {t('type_services')}:
                     <select
-                    name="country"
-                    value={country}
-                    onChange={e => setCountry(e.target.value)}
+                    name="service"
+                    value={service}
+                    onChange={e => setService(e.target.value)}
                     required>
-                    <option > {t('compte_c')} </option>
-                    <option >{t('compte_dt')} </option>
-                    <option >{t('compte_ep')} </option>
+                    <option value="" > {t('choix_service')} </option>
+                    <option value="compte courant" > {t('compte_c')} </option>
+                    <option  value="depôt à terme">{t('compte_dt')} </option>
+                    <option value="compte épargne" >{t('compte_ep')} </option>
                     
                     </select>
                 </label>

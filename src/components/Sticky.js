@@ -7,7 +7,21 @@ import './css/main.css'
 import Popup from "./Popup";
 import Slider from 'react-slick'
 import styles from "react-responsive-carousel/lib/styles/carousel.min.css";
+import { listAll, ref ,getDownloadURL } from 'firebase/storage'
+import { useEffect } from "react";
+import { storage } from "./backend/Firebase";
 function Sticky() {
+  const [imageList, setImageList] = useState([])
+  const imagesLitRef = ref(storage,"images/")
+  useEffect(()=>{
+    listAll(imagesLitRef).then((response)=> {
+      response.items.forEach((item)=>{
+          getDownloadURL(item).then((url)=>{
+            setImageList((prev) => [...prev, url])
+          })
+      })
+    })
+  },[])
   const   settings = {
     dots: true,
     infinite: true,
@@ -25,8 +39,14 @@ function Sticky() {
     <div>
         <Popup trigger={buttonPopup} setTrigger={setButtonPopup} >
         <Slider {...settings}   >
-        <img src={popup1} alt="" className="m-3 p-3" style={{width:'450px',height:'390px'}} />
-        <img src={popup2} alt="" className="m-3 p-3" style={{width:'450px',height:'390px'}} />
+        {
+            imageList.map((url,i)=>(
+              <div key={i}>
+                  <img  src={url} alt="" className="m-3 p-3" style={{width:'450px',height:'390px'}} />
+              </div>
+              
+            ))
+          }
         </Slider>
        
         </Popup >

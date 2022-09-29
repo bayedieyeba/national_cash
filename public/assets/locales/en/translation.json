@@ -118,9 +118,10 @@
     "mission" : "MISSION",
     "text_mission" : "Offering financial and non-financial services, innovative assistance. and well adapted to  needs and realities of the population all over the national territory.",
     "reseaux" : "Agency network",
-    "agences": "As part of its proximity policy, National Cash has a network of branches composed of four (4) points of sale:",
+    "agences": "As part of its proximity policy, National Cash has a network of branches composed of four (5) points of sale:",
     "bio_samba" : "Mr. Samba DIA has over twenty-five (25) years of experience in the micro finance sector, which allowed him to develop his skills and thus step up the ranks to occupy various positions of responsibility in West and Central Africa: He worked at PAMECAS for 14 years at various levels of responsibility including ten (10) years as Deputy Director General. Between 2011-2014, he was seconded to the Confederation of West African Financial Institutions (CIF) as Inspector General to coordinate the audit of the six central banks. In 2014, he joined Cameroon to hold the post of Managing Director of Pan-African savings and Loans SA for five (05) years before returning to Senegal where he will hold the post of Managing Director of MICROSEN SA for fifteen (15) months. Since January 2022, he has been Managing Director of National Cash SA.He is a graduate of a DESS in «Accounting, Financial and Fiscal Audit» of the University Cheikh Anta DIOP of Dakar and a DESS in «Corporate Finance» of the University of Evry VAL D'ESSONE. He also holds the certificate «Expert in Microfinance» from the Frankfurt School of Finance & Management.",
-    "titre_bio" : "Managing Director"
+    "titre_bio" : "Managing Director",
+    "choix_service" : "choice of service"
     
     
 }

@@ -48,6 +48,11 @@ const Footer = () => {
         const lat4=18.089619;
         const lon4= -15.976678;
         ifameData4.src=`https://maps.google.com/maps?q=${lat4},${lon4}&hl=es;&output=embed`
+        const ifameData5=document.getElementById("iframeId5")
+         
+        const lat5=20.942067;
+        const lon5= -17.038903;
+        ifameData5.src=`https://maps.google.com/maps?q=${lat5},${lon5}&hl=es;&output=embed`
     })
 
     return (
@@ -113,6 +118,13 @@ const Footer = () => {
                                         <p style={{color:'black',textAlign:'center',fontSize:'21px',fontFamily:'Roboto,sans-serif'}} className=" m-1">Agence POINT CHAUD </p>
                                         <p style={{textAlign:'center', color:'black'}}>Tel : 43 70 62 68</p>
                                     <iframe id="iframeId4" height="180px" width="200%"></iframe>
+                                    </div>
+                                </div>
+                                <div className='m-1'> 
+                                <div className='card' style={{backgroundColor:"#e89059"}}>
+                                        <p style={{color:'black',textAlign:'center',fontSize:'21px',fontFamily:'Roboto,sans-serif'}} className=" m-1">NOUADHIBOU</p>
+                                        <p style={{textAlign:'center', color:'black'}}>Tel : 31313249</p>
+                                    <iframe id="iframeId5" height="180px" width="200%"></iframe>
                                     </div>
                                 </div>
                         </div>

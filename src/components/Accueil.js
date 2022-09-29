@@ -24,27 +24,13 @@ function Accueil() {
     autoplay : true,
     adaptiveHeight: true
   };
-  const [buttonPopup,setButtonPopup] = useState(true)
   useEffect(()=>{
     
 },[])
     return (
       <div className=''>
-        {/* <div>
-          
-            <Popup trigger={buttonPopup} setTrigger={setButtonPopup} >
-            
-            <Slider {...settings}   >
-            <img src={popup1} alt="" className="m-3" style={{width:'500px',height:'390px'}} />
-            <img src={popup2} alt="" className="m-3" style={{width:'500px',height:'390px'}} />
-            </Slider>
-                
-            </Popup >
-         </div> */}
-        {/* <MySlide /> */}
+        
         <Testimonial />
-        {/* <Slider /> */}
-         {/* <Activites /> */}
          <Comptes />
          <Personnages />
          <FormulaireSouscription />
