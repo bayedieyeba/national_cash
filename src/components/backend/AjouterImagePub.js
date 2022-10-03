@@ -14,6 +14,7 @@ const AjouterImagePub = () => {
             alert("Image uploaded")
         })
     }
+    
   return (
     <>
         <div style={{marginTop:"250px"}} className="row py-4 ">

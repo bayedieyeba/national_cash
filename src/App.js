@@ -8,24 +8,28 @@ import Header from './components/Header';
 import Sticky from './components/Sticky';
 import Cashily from './components/Cashily';
 import Popup from "./components/Popup";
-import { useEffect, useState } from 'react';
+import { useState,useEffect } from 'react';
+import axios from "axios";
 import Slider from 'react-slick'
 import IMAGES from './components/ImagesPublicite';
-import AjouterImagePub from './components/backend/AjouterImagePub';
 import { listAll, ref ,getDownloadURL } from 'firebase/storage' 
-import {storage} from './components/backend/Firebase'
+import UploadImagePub from './components/UploadImagePub';
 function App() {
-  const [imageList, setImageList] = useState([])
-  const imagesLitRef = ref(storage,"images/")
-  useEffect(()=>{
-    listAll(imagesLitRef).then((response)=> {
-      response.items.forEach((item)=>{
-          getDownloadURL(item).then((url)=>{
-            setImageList((prev) => [...prev, url])
-          })
-      }) 
-    })
-  },[])
+  
+  const [urls,setUrls] = useState([])
+      useEffect(()=>{
+        axios.get(`http://localhost:4000/api/images`)
+        .then(res=>{
+          console.log("Status: ", res.status);
+          setUrls(res.data)
+          console.log(urls)
+         
+        })
+        .catch(err=>{
+          console.log(err)
+        })
+
+    },[])
   const   settings = {
     dots: true,
     infinite: true,
@@ -47,9 +51,9 @@ function App() {
           <Slider {...settings}   >
           
           {
-            imageList.map((url,i)=>(
+            urls.map((image,i)=>(
               <div key={i}>
-                  <img  src={url} alt="" className="m-3 p-3" style={{width:'450px',height:'390px'}} />
+                  <img  src={`http://localhost:4000/images/${image.url}`} alt="" className="m-3 p-3" style={{width:'450px',height:'390px'}} />
               </div>
               
             ))
@@ -77,8 +81,11 @@ function App() {
               <Route exact path='/cashily' element={<Cashily />} />
             </Routes>
             <Routes>
-              <Route exact path='/upload-images' element={<AjouterImagePub />} />
+              <Route exact path='/upload-image' element={<UploadImagePub />} />
             </Routes>
+            {/* <Routes>
+              <Route exact path='/upload-images' element={<AjouterImagePub />} />
+            </Routes> */}
        </Router>
       </div>
   );
