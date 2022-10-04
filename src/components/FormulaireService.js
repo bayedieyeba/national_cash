@@ -8,8 +8,8 @@ const FormulaireService = () => {
   
     const [email, setEmail] = useState("");
     const [num_tel,setNumTel] = useState("")
-  const [password, setPassword] = useState("");
-  const [country, setCountry] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [service, setService] = useState("");
   const [acceptedTerms, setAcceptedTerms] = useState(false);
 
   const navigate = useNavigate()
@@ -26,27 +26,27 @@ const FormulaireService = () => {
       <label>
       {t('nom_complet')}:
         <input className=' input_form'
-          name="email"
+          name="fullName"
           type="text"
-          value={email}
-          onChange={e => setEmail(e.target.value)}
+          value={fullName}
+          onChange={e => setFullName(e.target.value)}
           required />
       </label>
       
       <label>
         {t('votre_mail')}:
         <input className='input_form'
-          name="password"
+          name="email"
           type="email"
-          value={password}
-          onChange={e => setPassword(e.target.value)}
+          value={email}
+          onChange={e => setEmail(e.target.value)}
           required />
       </label>
       <label>
         {t('num_tel')}:
         <input className='input_form'
           name="Numero_telephone"
-          type="text"
+          type="tel"
           value={num_tel}
           onChange={e => setNumTel(e.target.value)}
           required />
@@ -54,9 +54,9 @@ const FormulaireService = () => {
       <label>
         {t('type_services')}:
         <select
-          name="country"
-          value={country}
-          onChange={e => setCountry(e.target.value)}
+          name="service"
+          value={service}
+          onChange={e => setService(e.target.value)}
           required>
           <option > {t('compte_c')} </option>
           <option >{t('compte_dt')} </option>

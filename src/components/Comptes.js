@@ -6,6 +6,8 @@ import Fade from 'react-reveal/Fade'
 import Flash from 'react-reveal/Flash';
 import cc from '../images/left.png'
 import Popup from "./Popup";
+import { AiOutlineClose } from "react-icons/ai";
+
 const Comptes = () => {
     const {t} =useTranslation()
     const [lireSuiteCC,setLireSuiteCC] = useState(false)
@@ -49,26 +51,59 @@ const Comptes = () => {
     const [email, setEmail] = useState("");
     const [service, setService] = useState("");
     const [acceptedTerms, setAcceptedTerms] = useState(false);
-
+    const [inscriptionValid, setInscriptionValid] = useState(false)
   const handleSubmit = (event) => {
     event.preventDefault();
-    emailjs.sendForm('service_1oy0vni','template_symeyz4', event.target,"GleaL7hyov49trCfd","ZNzBV4_R6trMzn_aDUWz8")
-    .then(res=>{
-        console.log(res)
-    }).catch(err=>console.log(err))
+    // emailjs.sendForm('service_1oy0vni','template_symeyz4', event.target,"GleaL7hyov49trCfd","ZNzBV4_R6trMzn_aDUWz8")
+    // .then(res=>{
+    //     console.log(res)
+    // }).catch(err=>console.log(err))
 
-    setButtonPopup(false)
-    setAcceptedTerms(false)
-    setEmail("")
-    setFullName("")
-    setService("")
-    setNumTel("")
+    // setButtonPopup(false)
+    // setAcceptedTerms(false)
+    // setEmail("")
+    // setFullName("")
+    // setService("")
+    // setNumTel("")
+    
+    fetch('http://localhost:4000/service/inscription',
+    {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json'},
+        body: JSON.stringify({"fullName":fullName,"email":email,"num_tel":num_tel,"service":service})
+    }
+    ).then( response => {
+      if (response.ok){
+        setInscriptionValid(true)
+        setEmail("")
+        setFullName("")
+        setService("")
+        setNumTel("")
+
+      }
+        
+   })
+   .catch((e) => {
+    console.log(e);   
+ });
   }
     return (
         <div className='comptes'>
+          
             <Popup trigger={buttonPopup} setTrigger={setButtonPopup} >
             <div className='formulaireService' style={{margin:0,padding:'30px'}}>
             <div  className=' body_div'>
+                {
+                inscriptionValid &&  
+                    <div className="alert alert-success mt-5 w-full" role="alert"> 
+                    <div className='d-flex flex-row'>
+                        <p >Inscription validée </p>
+                         <AiOutlineClose onClick={()=>setInscriptionValid(false)} style={{color:'red',margin:'5px'}} />
+                    </div>
+                    <div>
+                    </div>
+                    </div> 
+                 }
                 <form  className='form_formulaire' onSubmit={handleSubmit}>
                 <h1>{t('souscrir')} </h1>
 
