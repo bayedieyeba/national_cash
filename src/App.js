@@ -14,6 +14,9 @@ import Slider from 'react-slick'
 import IMAGES from './components/ImagesPublicite';
 import { listAll, ref ,getDownloadURL } from 'firebase/storage' 
 import UploadImagePub from './components/UploadImagePub';
+import ModifierContenuCompte from './components/ModifierContenuCompte';
+import ModifierCompteAnglais from './components/ModifierCompteAnglais';
+import ModifierCompteArabe from './components/ModifierCompteArabe';
 function App() {
   
   const [urls,setUrls] = useState([])
@@ -82,6 +85,15 @@ function App() {
             </Routes>
             <Routes>
               <Route exact path='/upload-image' element={<UploadImagePub />} />
+            </Routes>
+            <Routes>
+              <Route exact path='/modifier-compte-francais' element={<ModifierContenuCompte />} />
+            </Routes>
+            <Routes>
+              <Route exact path='/modifier-compte-anglais' element={<ModifierCompteAnglais />} />
+            </Routes>
+            <Routes>
+              <Route exact path='/modifier-compte-arabe' element={<ModifierCompteArabe />} />
             </Routes>
             {/* <Routes>
               <Route exact path='/upload-images' element={<AjouterImagePub />} />

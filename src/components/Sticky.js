@@ -6,7 +6,6 @@ import './css/main.css'
 import Popup from "./Popup";
 import Slider from 'react-slick'
 import styles from "react-responsive-carousel/lib/styles/carousel.min.css";
-import { storage } from "./backend/Firebase";
 import { useEffect } from "react";
 import axios from "axios";
 function Sticky() {

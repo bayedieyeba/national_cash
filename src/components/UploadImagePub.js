@@ -5,6 +5,7 @@ import Slider from 'react-slick'
 import { FaLock,FaUser } from "react-icons/fa";
 import Popup from "./Popup";
 import '../components/css/login.css'
+import { Link } from 'react-router-dom';
 const UploadImagePub = () => {
 
     //http://localhost:4000/images/image_1664793179335.png
@@ -122,6 +123,11 @@ const UploadImagePub = () => {
                 }
                 { affichePageAdmin &&
                     <div>
+                        <div className='row'>
+                            <Link to='/modifier-compte-francais'>modifier contenu compte francais</Link>
+                            <Link to='/modifier-compte-anglais'>modifier contenu compte anglais</Link>
+                            <Link to='/modifier-compte-arabe'>modifier contenu compte arabe</Link>
+                        </div>
                     <div className="col-lg-6 mx-auto">
 
                             
