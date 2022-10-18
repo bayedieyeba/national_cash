@@ -6,6 +6,7 @@ import { FaLock,FaUser } from "react-icons/fa";
 import Popup from "./Popup";
 import '../components/css/login.css'
 import { Link } from 'react-router-dom';
+import Auth from './Auth';
 const UploadImagePub = () => {
 
     //http://localhost:4000/images/image_1664793179335.png
@@ -70,53 +71,74 @@ const UploadImagePub = () => {
             console.log(e);   
          });
       }
-      const [login ,setLogin] = useState('')
-      const [password, setPassword] = useState('')
-  
+    const [email ,setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [pageLogin ,setPageLogin] = useState(true)
+    const [affichePageAdmin,setAffichePageAdmin] = useState(false)
+    const [affichemessageErreur,setAfficheMessageErreur] = useState(false)
+    const [afficheProbleServer,setAfficheProblemeServer] = useState(false)
     const  handleLogin =(e) =>{
           e.preventDefault()
           const requestOptions = {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ "login":login,"password":password  })
-          };
-    
-          fetch('http://localhost:4000/users/auth',requestOptions)
-          
-          .then( response => {
-             
-              if(response.ok){
-                  setAffichePageAdmin(true)
-                  setPageLogin(false)
-              }
-                 
-           })
-           .catch((e) => {
-            console.log(e);   
-         });
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ "email":email,"password":password  })
+        };
+
+        fetch('http://192.168.20.40:5050/login',requestOptions)
+
+        .then( response => {
+            response.json().then(data =>{
+               if(response.ok){
+                   setPageLogin(false)
+                   setAfficheMessageErreur(false)
+                   setAffichePageAdmin(true)
+                //    Auth.login()
+                }else{
+                   setAfficheMessageErreur(true)
+               }
+            })
+         })
+         .catch((e) => {
+            setAfficheProblemeServer(true)
+          console.log(e);
+       });
     }
-      const [pageLogin ,setPageLogin] = useState(true)
-      const [affichePageAdmin,setAffichePageAdmin] = useState(false)
+      
   return (
     <>
 
         <div style={{marginTop:"130px"}} className="row py-4 ">
+               
                 { pageLogin &&
                     <div>
                     <div className="login">
+                    {
+                        affichemessageErreur && 
+                        <div className="alert alert-danger m-2" role="alert">
+                            login ou mot de passe ne correspond pas
+                        </div>
+                    }
+                    {
+                        afficheProbleServer &&
+                        <div className="alert alert-danger " role="alert">
+                           Problème serveur
+                        </div>
+                     }
                         <h1>Login</h1>
                         
                         <form onSubmit={handleLogin}>
-                            <label for="username">
+                            
+                            <label for="email">
                                 
                                 <FaUser />
                             </label>
-                            <input type="text" name="username" placeholder="Username" id="username" required />
+                            <input onChange={(e)=> setEmail(e.target.value)} type="text" name="email" placeholder="email" id="email" required />
                             <label for="password">
                                 <FaLock/>
                             </label>
-                            <input type="password" name="password" placeholder="Password" id="password" required />
-                            <input type="submit" value="Login" />
+                            <input onChange={(e)=> setPassword(e.target.value)} type="password" name="password" placeholder="Password" id="password" required />
+                            <input type="submit" value="Connecter" />
                         </form>
                     </div>
                 </div>
@@ -142,7 +164,7 @@ const UploadImagePub = () => {
 
                         </div>
                     
-                            <Slider {...settings}   >
+                            <Slider {...settings}>
                         {  
                             urls.map((image,i)=>(
                                 <button style={{width:'450px'}} className="mt-3" onClick={()=>{ setButtonPopup(true); setIdImage(image.id)} }>
