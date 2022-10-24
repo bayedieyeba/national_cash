@@ -14,6 +14,7 @@ import {
 
 export default function Personnages() {
   const {t} =useTranslation()
+  
   return (
     <div className="personnage" >
           <MDBContainer className="my-5" style={{color:'blue'}}>
