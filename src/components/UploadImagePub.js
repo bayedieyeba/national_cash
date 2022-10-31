@@ -73,8 +73,8 @@ const UploadImagePub = () => {
       }
     const [email ,setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [pageLogin ,setPageLogin] = useState(true)
-    const [affichePageAdmin,setAffichePageAdmin] = useState(false)
+    const [pageLogin ,setPageLogin] = useState(false)
+    const [affichePageAdmin,setAffichePageAdmin] = useState(true)
     const [affichemessageErreur,setAfficheMessageErreur] = useState(false)
     const [afficheProbleServer,setAfficheProblemeServer] = useState(false)
     const  handleLogin =(e) =>{

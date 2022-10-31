@@ -138,37 +138,15 @@ const Footer = () => {
                     }}>
                         
                         <div className='d-flex justify-content-center p-2'>
-                            {/* <Slide bottom>
-                            <div className='d-flex flex-row justify-content-space-between mt-5'>
-                            <img src={logo2} style={{height:'160px',width:'160px'}} className="" alt="" />
-                                <div  className='d-flex flex-column px-3'>
-                                        <p style={{fontWeight:'bold',fontSize:'30px'}}>{t('titre_bulletins')} </p>
-                                        <label htmlFor="">{t('sous_titre_bulletins')} </label>
-                                        <input type="text" className='form-control' placeholder={t('input_bulletin')} />
-                                        <button className='btn btn-dark m-1'>{t('button_bulletin')} </button>
-                                </div>
-                              
-                            </div>
-                            </Slide > */}
-                            {/* <div className="v-line1"></div> */}
-                            <Slide bottom>
-                            {/* <div className='d-flex flex-column mt-5'>
-                                
-                                <p style={{fontWeight:'bold',fontSize:'30px'}}>{t('liens')} </p>
-                                <p className='px-4'>www.siteweb.com</p>
-                                <p className='px-4'>www.siteweb.com</p>
-                                <p className='px-4'>www.siteweb.com</p>
-                            </div> */}
-                            </Slide>
-                            {/* <div className="v-line2"></div> */}
+                  
                             <Slide bottom>
                             <div className='d-flex flex-column mt-4 mx-4'>
                             <p   style={{fontWeight:'bold',fontSize:'20px',textAlign:'center', marginLeft:'40px'}}>{t('suivre')} </p>
                                 <div className='d-flex justify-content-between'>
-                                   <a href='https://www.facebook.com/ncash18'><FaFacebookF style={{color:'white',fontSize:'20px'}}/> </a>
-                                   <a href='https://instagram.com/national___cash?igshid=YmMyMTA2M2Y='><AiFillInstagram style={{color:'white',fontSize:'20px'}}/></a>
-                                   <a href='https://www.snapchat.com/add/nationalcashsa' ><BsSnapchat style={{color:'white',fontSize:'20px'}}/></a>
-                                   <a href='https://www.linkedin.com/in/national-cash-4a8902244/' ><AiFillLinkedin style={{ color:'white',fontSize:'20px'}}/></a>
+                                   <a href={t('lien_faceBook')}><FaFacebookF style={{color:'white',fontSize:'20px'}}/> </a>
+                                   <a href={t('lien_instagram')}><AiFillInstagram style={{color:'white',fontSize:'20px'}}/></a>
+                                   <a href={t('lien_snap')} ><BsSnapchat style={{color:'white',fontSize:'20px'}}/></a>
+                                   <a href={t('lien_linkdin')} ><AiFillLinkedin style={{ color:'white',fontSize:'20px'}}/></a>
     
                                 </div>
                             </div>
