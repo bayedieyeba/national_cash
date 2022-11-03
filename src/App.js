@@ -19,6 +19,8 @@ import ModifierCompteAnglais from './components/ModifierCompteAnglais';
 import ModifierCompteArabe from './components/ModifierCompteArabe';
 import { ProtectedRoute } from './components/protected.route';
 import ModifierContenuSite from './components/ModifierContenuSite';
+import ModifierContenuCredit from './components/ModifierContenuCredit';
+import ModifierContenuCreditFrancais from './components/ModifierContenuCreditFrancais';
 function App() {
   
   const [urls,setUrls] = useState([])
@@ -100,8 +102,16 @@ function App() {
             <Routes>
               <Route exact path='/modifier-compte-arabe' element={<ModifierCompteArabe />} />
             </Routes>
+            
             <Routes>
               <Route exact path='/modifier-contenu-site' element={<ModifierContenuSite />} />
+            </Routes>
+            
+            <Routes>
+              <Route exact path='/modifier-contenu-credits' element={<ModifierContenuCredit />} />
+            </Routes>
+            <Routes>
+              <Route exact path='/modifier-credit-francais' element={<ModifierContenuCreditFrancais />} />
             </Routes>
             {/* <Routes>
               <Route exact path='/upload-images' element={<AjouterImagePub />} />

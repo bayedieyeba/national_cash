@@ -150,6 +150,7 @@ const UploadImagePub = () => {
                             <Link to='/modifier-compte-anglais'>modifier contenu compte anglais</Link>
                             <Link to='/modifier-compte-arabe'>modifier contenu compte arabe</Link>
                             <Link to='/modifier-contenu-site'>modifier autre contenu</Link>
+                            <Link to='/modifier-contenu-credits'>modifier contenu credit</Link>
                         </div>
                     <div className="col-lg-6 mx-auto">
 
