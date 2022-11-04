@@ -1,9 +1,9 @@
-import axios from 'axios';
+import axios from 'axios'
 import React from 'react'
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useEffect } from 'react'
+import { useState } from 'react'
 
-const ModifierContenuCreditFrancais = () => {
+const ModifierContenuCreditArabe = () => {
     const [afficheCreditMewleny,setAfficheCreditMewleny] = useState(false)
     const[afficheCreditNoujoum,setAfficheCreditNoujoum] = useState(false)
     const [afficheCreditBeyti,setAfficheCreditBeyti] = useState(false)
@@ -13,12 +13,14 @@ const ModifierContenuCreditFrancais = () => {
     const[afficheCreditAvanceSalaire,setAfficheCreditAvanceSalaire] = useState(false)
 
     const [afficheMessageModif,setAfficheMessageModif] = useState(false)
+
     // credit mawleny 
     const [cm_partie1,setCmPartie1] = useState("")
     const [cm_partie2,setCmPartie2] = useState("")
     const [cm_partie3,setCmPartie3] = useState("")
     const [cm_partie4,setCmPartie4] = useState("")
     const [cm_partie5,setCmPartie5] = useState("")
+
     const handleModifCreditMawleny = (e)=>{
         e.preventDefault()
         const requestOptions = {
@@ -26,7 +28,7 @@ const ModifierContenuCreditFrancais = () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ "partie1":cm_partie1,"partie2":cm_partie2,"partie3":cm_partie3,"partie4":cm_partie4,"partie5":cm_partie5  })
         };
-        fetch('http://localhost:4000/modifier/credit-mawleny-francais',requestOptions)
+        fetch('http://localhost:4000/modifier/credit-mawleny-arabe',requestOptions)
         
         .then( response => {
            
@@ -58,7 +60,7 @@ const ModifierContenuCreditFrancais = () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ "partie1":cn_partie1,"partie2":cn_partie2,"partie3":cn_partie3,"partie4":cn_partie4,"partie5":cn_partie5  })
         };
-        fetch('http://localhost:4000/modifier/credit-noujoume-francais',requestOptions)
+        fetch('http://localhost:4000/modifier/credit-noujoume-arabe',requestOptions)
         
         .then( response => {
            
@@ -75,7 +77,8 @@ const ModifierContenuCreditFrancais = () => {
           console.log(e);   
        });
     }
-   // credit beyti
+
+    // credit beyti
     const [cb_partie1, setCbPartie1] = useState("")
     const [cb_partie2,setCbPartie2] = useState("")
     const [cb_partie3,setCbPartie3] = useState("")
@@ -91,7 +94,7 @@ const ModifierContenuCreditFrancais = () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ "partie1":cb_partie1,"partie2":cb_partie2,"partie3":cb_partie3,"partie4":cb_partie4,"partie5":cb_partie5 ,"partie6":cb_partie6,"partie7":cb_partie7 })
         };
-        fetch('http://localhost:4000/modifier/credit-beyti-francais',requestOptions)
+        fetch('http://localhost:4000/modifier/credit-beyti-arabe',requestOptions)
         
         .then( response => {
            
@@ -127,7 +130,7 @@ const ModifierContenuCreditFrancais = () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ "partie1":cbi_partie1,"partie2":cbi_partie2,"partie3":cbi_partie3,"partie4":cbi_partie4,"partie5":cbi_partie5 ,"partie6":cbi_partie6,"partie7":cbi_partie7 })
         };
-        fetch('http://localhost:4000/modifier/credit-bidaya-francais',requestOptions)
+        fetch('http://localhost:4000/modifier/credit-bidaya-arabe',requestOptions)
         
         .then( response => {
            
@@ -146,40 +149,41 @@ const ModifierContenuCreditFrancais = () => {
           console.log(e);   
        });
     }
-    // credit takaful
-    const [ct_partie1,setCtPartie1] = useState("")
-    const [ct_partie2,setCtPartie2] = useState("")
-    const [ct_partie3,setCtPartie3] = useState("")
-    const [ct_partie4,setCtPartie4] = useState("")
-    const [ct_partie5,setCtPartie5] = useState("")
-    const [ct_partie6,setCtPartie6] = useState("")
 
-    const handleModifCreditTakaful =(e)=> {
-        e.preventDefault()
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ "partie1":ct_partie1,"partie2":ct_partie2,"partie3":ct_partie3,"partie4":ct_partie4,"partie5":ct_partie5 ,"partie6":ct_partie6 })
-        };
-        fetch('http://localhost:4000/modifier/credit-takaful-francais',requestOptions)
-        
-        .then( response => {
-           
-          setAfficheMessageModif(true)
-          setCtPartie1("")
-          setCtPartie2("")
-          setCtPartie3("")
-          setCtPartie4("")
-          setCtPartie5("")
-          setCtPartie6("")
-      
-         })
-         .catch((e) => {
-          console.log(e);   
-       });
-    }
-
-    // credit equipement
+     // credit takaful
+     const [ct_partie1,setCtPartie1] = useState("")
+     const [ct_partie2,setCtPartie2] = useState("")
+     const [ct_partie3,setCtPartie3] = useState("")
+     const [ct_partie4,setCtPartie4] = useState("")
+     const [ct_partie5,setCtPartie5] = useState("")
+     const [ct_partie6,setCtPartie6] = useState("")
+ 
+     const handleModifCreditTakaful =(e)=> {
+         e.preventDefault()
+         const requestOptions = {
+             method: 'POST',
+             headers: { 'Content-Type': 'application/json' },
+             body: JSON.stringify({ "partie1":ct_partie1,"partie2":ct_partie2,"partie3":ct_partie3,"partie4":ct_partie4,"partie5":ct_partie5 ,"partie6":ct_partie6 })
+         };
+         fetch('http://localhost:4000/modifier/credit-takaful-arabe',requestOptions)
+         
+         .then( response => {
+            
+           setAfficheMessageModif(true)
+           setCtPartie1("")
+           setCtPartie2("")
+           setCtPartie3("")
+           setCtPartie4("")
+           setCtPartie5("")
+           setCtPartie6("")
+       
+          })
+          .catch((e) => {
+           console.log(e);   
+        });
+     }
+    
+     // credit equipement
     const [ce_partie1,setCePartie1] = useState("")
     const [ce_partie2,setCePartie2] = useState("")
     const [ce_partie3,setCePartie3] = useState("")
@@ -196,7 +200,7 @@ const ModifierContenuCreditFrancais = () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ "partie1":ce_partie1,"partie2":ce_partie2,"partie3":ce_partie3,"partie4":ce_partie4,"partie5":ce_partie5 ,"partie6":ce_partie6,"partie7":ce_partie7 ,"partie8":ce_partie8 })
         };
-        fetch('http://localhost:4000/modifier/credit-equipement-francais',requestOptions)
+        fetch('http://localhost:4000/modifier/credit-equipement-arabe',requestOptions)
         
         .then( response => {
            
@@ -216,39 +220,39 @@ const ModifierContenuCreditFrancais = () => {
        });
     }
 
-    // credit avance sur salaire
-    const [cs_partie2,setCsPartie2] = useState("")
-    const [cs_partie3,setCsPartie3] = useState("")
-    const [cs_partie4,setCsPartie4] = useState("")
-    const [cs_partie1,setCsPartie1] = useState("")
-    const [cs_partie5,setCsPartie5] = useState("")
-    
-    const handleModifCreditAvanceSalaire = (e)=>{
-        e.preventDefault()
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ "partie1":cs_partie1,"partie2":cs_partie2,"partie3":cs_partie3,"partie4":cs_partie4,"partie5":cs_partie5})
-        };
-        fetch('http://localhost:4000/modifier/credit-avance-salaire-francais',requestOptions)
+        // credit avance sur salaire
+        const [cs_partie2,setCsPartie2] = useState("")
+        const [cs_partie3,setCsPartie3] = useState("")
+        const [cs_partie4,setCsPartie4] = useState("")
+        const [cs_partie1,setCsPartie1] = useState("")
+        const [cs_partie5,setCsPartie5] = useState("")
         
-        .then( response => {
-           
-          setAfficheMessageModif(true)
-          setCsPartie1("")
-          setCsPartie2("")
-          setCsPartie3("")
-          setCsPartie4("")
-          setCsPartie5("")
-         
-      
-         })
-         .catch((e) => {
-          console.log(e);   
-       });
-    }
+        const handleModifCreditAvanceSalaire = (e)=>{
+            e.preventDefault()
+            const requestOptions = {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ "partie1":cs_partie1,"partie2":cs_partie2,"partie3":cs_partie3,"partie4":cs_partie4,"partie5":cs_partie5})
+            };
+            fetch('http://localhost:4000/modifier/credit-avance-salaire-arabe',requestOptions)
+            
+            .then( response => {
+               
+              setAfficheMessageModif(true)
+              setCsPartie1("")
+              setCsPartie2("")
+              setCsPartie3("")
+              setCsPartie4("")
+              setCsPartie5("")
+             
+          
+             })
+             .catch((e) => {
+              console.log(e);   
+           });
+        }
     useEffect(()=>{
-        axios.get('http://localhost:4000/partie-francais-credit-mawleny')
+        axios.get('http://localhost:4000/partie-arabe-credit-mawleny')
         .then(res=>{
         
             setCmPartie1(res.data.partie1)
@@ -261,7 +265,7 @@ const ModifierContenuCreditFrancais = () => {
         .catch(err=>{
           console.log(err)
         })
-        axios.get('http://localhost:4000/partie-francais-credit-noujoume')
+        axios.get('http://localhost:4000/partie-arabe-credit-noujoume')
         .then(res=>{
             setCnPartie1(res.data.partie1)
             setCnPartie2(res.data.partie2)
@@ -273,7 +277,7 @@ const ModifierContenuCreditFrancais = () => {
         .catch(err=>{
           console.log(err)
         })
-        axios.get('http://localhost:4000/partie-francais-credit-beyti')
+        axios.get('http://localhost:4000/partie-arabe-credit-beyti')
         .then(res=>{
             setCbPartie1(res.data.partie1)
             setCbPartie2(res.data.partie2)
@@ -287,7 +291,7 @@ const ModifierContenuCreditFrancais = () => {
         .catch(err=>{
           console.log(err)
         })
-        axios.get('http://localhost:4000/partie-francais-credit-bidaya')
+        axios.get('http://localhost:4000/partie-arabe-credit-bidaya')
         .then(res=>{
             setCbiPartie1(res.data.partie1)
             setCbiPartie2(res.data.partie2)
@@ -302,7 +306,7 @@ const ModifierContenuCreditFrancais = () => {
           console.log(err)
         })
 
-        axios.get('http://localhost:4000/partie-francais-credit-takaful')
+        axios.get('http://localhost:4000/partie-arabe-credit-takaful')
         .then(res=>{
             setCtPartie1(res.data.partie1)
             setCtPartie2(res.data.partie2)
@@ -316,7 +320,7 @@ const ModifierContenuCreditFrancais = () => {
           console.log(err)
         })
 
-        axios.get('http://localhost:4000/partie-francais-credit-equipement-samsung')
+        axios.get('http://localhost:4000/partie-arabe-credit-equipement-samsung')
         .then(res=>{
             setCePartie1(res.data.partie1)
             setCePartie2(res.data.partie2)
@@ -332,7 +336,7 @@ const ModifierContenuCreditFrancais = () => {
           console.log(err)
         })
 
-        axios.get('http://localhost:4000/partie-francais-credit-avance-salaire')
+        axios.get('http://localhost:4000/partie-arabe-credit-avance-salaire')
         .then(res=>{
             setCsPartie1(res.data.partie1)
             setCsPartie2(res.data.partie2)
@@ -348,7 +352,7 @@ const ModifierContenuCreditFrancais = () => {
    },[])
   return (
     <>
-       <div style={{margin:"130px"}}>
+        <div style={{margin:"130px"}}>
             <button onClick={()=>{setAfficheCreditMewleny(true);setAfficheCreditNoujoum(false);setAfficheCreditBeyti(false);setAfficheCreditBidaya(false);setAfficheCreditTakaful(false);setAfficheCreditEquipe(false);setAfficheCreditAvanceSalaire(false)}} type="button" className="btn btn-primary m-3">Crédit Mewleny</button>
             <button onClick={()=>{setAfficheCreditMewleny(false);setAfficheCreditBidaya(false);setAfficheCreditNoujoum(true);setAfficheCreditBeyti(false);setAfficheCreditTakaful(false);setAfficheCreditEquipe(false);setAfficheCreditAvanceSalaire(false)}} type="button" className="btn btn-primary m-3">Crédit Noujoume</button>
             <button onClick={()=>{setAfficheCreditMewleny(false);setAfficheCreditNoujoum(false);setAfficheCreditBeyti(true);setAfficheCreditBidaya(false);setAfficheCreditTakaful(false);setAfficheCreditEquipe(false);setAfficheCreditAvanceSalaire(false)}} type="button" className="btn btn-primary m-3">Crédit Beyti</button>
@@ -356,6 +360,7 @@ const ModifierContenuCreditFrancais = () => {
             <button onClick={()=>{setAfficheCreditMewleny(false);setAfficheCreditNoujoum(false);setAfficheCreditBeyti(false);setAfficheCreditBidaya(false);setAfficheCreditTakaful(true);setAfficheCreditEquipe(false);setAfficheCreditAvanceSalaire(false)}} type="button" className="btn btn-primary m-3">Crédit Takaful</button>
             <button onClick={()=>{setAfficheCreditMewleny(false);setAfficheCreditNoujoum(false);setAfficheCreditBeyti(false);setAfficheCreditBidaya(false);setAfficheCreditTakaful(false);setAfficheCreditEquipe(true);setAfficheCreditAvanceSalaire(false)}} type="button" className="btn btn-primary m-3">Crédit Equipement</button>
             <button onClick={()=>{setAfficheCreditMewleny(false);setAfficheCreditNoujoum(false);setAfficheCreditBeyti(false);setAfficheCreditBidaya(false);setAfficheCreditTakaful(false);setAfficheCreditEquipe(false);setAfficheCreditAvanceSalaire(true)}} type="button" className="btn btn-primary m-3">Crédit Avance sur Salaire</button>
+           
             {
                 afficheCreditMewleny && 
                 <div className='m-5'>
@@ -429,8 +434,9 @@ const ModifierContenuCreditFrancais = () => {
                    
                     <button type="submit" className="btn btn-primary mt-2">Valider</button>
                 </form>
-            </div>
+                </div>
             }
+
             {
                 afficheCreditBeyti &&
                 <div className='m-5'>
@@ -476,7 +482,7 @@ const ModifierContenuCreditFrancais = () => {
                    
                     <button type="submit" className="btn btn-primary mt-2">Valider</button>
                 </form>
-            </div>
+                </div>
             }
             {
                 afficheCreditBidaya &&
@@ -525,7 +531,7 @@ const ModifierContenuCreditFrancais = () => {
                 </form>
                 </div>
             }
-            {
+             {
                 afficheCreditTakaful &&
                 <div className='m-5'>
                 {afficheMessageModif && <div className="alert alert-success" role="alert">
@@ -565,8 +571,8 @@ const ModifierContenuCreditFrancais = () => {
                     <button type="submit" className="btn btn-primary mt-2">Valider</button>
                 </form>
                 </div>
-            }
-            {
+             }
+             {
                 afficheCreditEquipe &&
                 <div className='m-5'>
                 {afficheMessageModif && <div className="alert alert-success" role="alert">
@@ -618,7 +624,7 @@ const ModifierContenuCreditFrancais = () => {
                 </form>
                 </div>
             }
-            
+
             {
                 afficheCreditAvanceSalaire &&
                 <div className='m-5'>
@@ -660,4 +666,4 @@ const ModifierContenuCreditFrancais = () => {
   )
 }
 
-export default ModifierContenuCreditFrancais
+export default ModifierContenuCreditArabe
