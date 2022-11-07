@@ -66,12 +66,12 @@ const Footer = () => {
                     <Fade right>
                     <h1 style={{textAlign:'center',fontWeight:'bold'}}>{t('titre_contact')}</h1>
                     <p style={{textAlign:'center' ,fontSize:'20px'}} >{t('adresse1')}</p>  
-                    <div className='m-2 ' style={{textAlign:'center',fontSize:'20px'}}><Link to=""><GiPositionMarker style={{color:'#e89059',fontSize:'25px'}}/></Link> Rue N°41001 Nouakchott-Mauritanie </div>
+                    <div className='m-2 ' style={{textAlign:'center',fontSize:'20px'}}><Link to=""><GiPositionMarker style={{color:'#e89059',fontSize:'25px'}}/></Link> {t('adresse_service')} </div>
                     <div className='d-flex justify-content-center '>
                         
-                    <div className='m-2 p-3'> <Link to=""><AiTwotonePhone style={{color:'#e89059',fontSize:'25px'}} /></Link>+222 34462615</div>
-                        <div className='m-2 p-3'><Link to=""><AiTwotonePhone style={{color:'#e89059',fontSize:'25px'}} /></Link>+222 38000506</div>
-                    <div className='m-2 p-3'><Link to=""><MdEmail style={{color:'#e89059',fontSize:'25px'}} /> </Link>contact@nationalcash.mr</div> 
+                    <div className='m-2 p-3'> <Link to=""><AiTwotonePhone style={{color:'#e89059',fontSize:'25px'}} /></Link>{t('num_service_1')} </div>
+                        <div className='m-2 p-3'><Link to=""><AiTwotonePhone style={{color:'#e89059',fontSize:'25px'}} /></Link>{t('num_service_2')}</div>
+                    <div className='m-2 p-3'><Link to=""><MdEmail style={{color:'#e89059',fontSize:'25px'}} /> </Link>{t('email_service')}</div> 
                     </div>
                     </Fade>
                     </div>
@@ -95,35 +95,35 @@ const Footer = () => {
                                 <div className='m-1'> 
                                     <div className='card' style={{backgroundColor:"#e89059"}}>
                                         <p style={{color:'black',textAlign:'center',fontSize:'21px',fontFamily:'Roboto,sans-serif'}} className=" m-1">Agence CENTRALE</p>
-                                        <p style={{textAlign:'center', color:'black'}}>Tel : 43 67 78 58</p>
+                                        <p style={{textAlign:'center', color:'black'}}>{t('num_agent_central')}</p>
                                     <iframe id="iframeId" height="180px" width="200%" > </iframe>
                                     </div>
                                 </div>
                                 <div className='m-1'> 
                                 <div className='card' style={{backgroundColor:"#e89059"}}>
                                         <p style={{color:'black',textAlign:'center',fontSize:'21px',fontFamily:'Roboto,sans-serif'}} className=" m-1">Agence CHARBON </p>
-                                        <p style={{textAlign:'center', color:'black'}}>Tel : 30 71 49 82</p>
+                                        <p style={{textAlign:'center', color:'black'}}>{t('num_agent_charbon')}</p>
                                     <iframe id="iframeId2" height="180px" width="200%"></iframe>
                                 </div>  
                                 </div>
                                 <div className='m-1'> 
                                 <div className='card' style={{backgroundColor:"#e89059"}}>
                                         <p style={{color:'black',textAlign:'center',fontSize:'21px',fontFamily:'Roboto,sans-serif'}} className=" m-1">Agence TOUJOUNI</p>
-                                        <p style={{textAlign:'center', color:'black'}}>Tel : 42 56 34 17</p>
+                                        <p style={{textAlign:'center', color:'black'}}>{t('num_agent_toujouni')}</p>
                                     <iframe id="iframeId3" height="180px" width="200%"></iframe>
                                     </div>
                                 </div>
                                 <div className='m-1'> 
                                 <div className='card' style={{backgroundColor:"#e89059"}}>
                                         <p style={{color:'black',textAlign:'center',fontSize:'21px',fontFamily:'Roboto,sans-serif'}} className=" m-1">Agence POINT CHAUD </p>
-                                        <p style={{textAlign:'center', color:'black'}}>Tel : 43 70 62 68</p>
+                                        <p style={{textAlign:'center', color:'black'}}>{t('num_agant_point_chaud')}</p>
                                     <iframe id="iframeId4" height="180px" width="200%"></iframe>
                                     </div>
                                 </div>
                                 <div className='m-1'> 
                                 <div className='card' style={{backgroundColor:"#e89059"}}>
                                         <p style={{color:'black',textAlign:'center',fontSize:'21px',fontFamily:'Roboto,sans-serif'}} className=" m-1">NOUADHIBOU</p>
-                                        <p style={{textAlign:'center', color:'black'}}>Tel : 31313249</p>
+                                        <p style={{textAlign:'center', color:'black'}}>{t('num_agant_nouadhibou')}</p>
                                     <iframe id="iframeId5" height="180px" width="200%"></iframe>
                                     </div>
                                 </div>

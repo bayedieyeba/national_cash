@@ -17,6 +17,9 @@ const [afficheTextMission , setAfficheTextMission] = useState(false)
 const [afficheTextVision,setAfficheTextVision] = useState(false)
 const [afficheFooter,setAfficheFooter] = useState(false)
 
+const [afficheNumeroService, setAfficheNumeroService] = useState(false)
+const [afficheNumeroAgent,setAfficheNumeroAgent] = useState(false)
+
 const[titre_fr,setTitre_fr] = useState("")
 const[titre_en,setTitre_en] = useState("")
 const[titre_ar,setTitre_ar] = useState("")
@@ -34,6 +37,44 @@ const [textMissionAr,SetTextMissionAr] = useState("")
 const [textVisionFr,setTextVisionFr] = useState("")
 const [textVisionEn,setTextVisionEn] = useState("")
 const [textVisionAr,setTextVisionAr] = useState("")
+
+const[num1,setNum1] = useState()
+const[num2,setNum2] = useState()
+const [email, setEmail] = useState("")
+const [adresse,setAdresse] = useState("")
+
+const [num_central , setNumCentral] = useState("")
+const [num_charbon , setNumCharbon] = useState("")
+const [num_toujouni , setNumToujouni] = useState("")
+const [num_point_chaud , setNumPointChaud] = useState("")
+const [num_nouadhibou , setNumNouadhibou] = useState("")
+
+useEffect(()=>{
+    axios.get('http://localhost:4000/get-agence-number')
+    .then(res=>{
+      setNumCentral(res.data.num_central)
+      setNumCharbon(res.data.num_charbon)
+      setNumToujouni(res.data.num_toujouni)
+      setNumPointChaud(res.data.num_point_chaud)
+      setNumNouadhibou(res.data.num_nouadhibou)
+    })
+    .catch(err=>{
+      console.log(err)
+    })
+},[])
+
+useEffect(()=>{
+    axios.get('http://localhost:4000/get-service-number')
+    .then(res=>{
+      setNum1(res.data.num1)
+      setNum2(res.data.num2)
+      setEmail(res.data.email)
+      setAdresse(res.data.adresse)
+    })
+    .catch(err=>{
+      console.log(err)
+    })
+},[])
 
 useEffect(()=>{
     axios.get('http://localhost:4000/liens-reseau-sociaux')
@@ -214,14 +255,59 @@ const handleLinks = (e) => {
       console.log(e);   
    });
 }
+const handleNumberService = (e) => {
+    e.preventDefault()
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ "num1":num1,"num2":num2,"email":email,"adresse":adresse})
+    };
+
+    fetch('http://localhost:4000/modifier/service-number',requestOptions)
+    
+    .then( response => {
+        setAfficheMessageModif(true)
+        setNum1("")
+        setNum2("")
+        setEmail("")
+        setAdresse("") 
+     })
+     .catch((e) => {
+      console.log(e);   
+   });
+}
+    const handleNumberAgnce =(e) =>{
+        e.preventDefault()
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ "num_central":num_central,"num_charbon":num_charbon,"num_toujouni":num_toujouni,"num_point_chaud":num_point_chaud,"num_nouadhibou":num_nouadhibou})
+        };
+    
+        fetch('http://localhost:4000/modifier/number-of-agences',requestOptions)
+        
+        .then( response => {
+            setAfficheMessageModif(true)
+            setNumCentral("")
+            setNumCharbon("")
+            setNumToujouni("")
+            setNumPointChaud("")
+            setNumNouadhibou("")
+         })
+         .catch((e) => {
+          console.log(e);   
+       });
+    }
   return (
     <div style={{marginTop:"130px", marginLeft:'150px'}}>
-        <div style={{marginTop:"130px", marginLeft:'350px'}}>
-            <button onClick={()=>{setafficheMotDg(true);setAfficheDescription(false);setAfficheTextMission(false);setAfficheTextVision(false);setAfficheFooter(false)}} type="button" className="btn btn-primary m-3">Mot du dg</button>
-            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(true);setAfficheTextMission(false);setAfficheTextVision(false);setAfficheFooter(false)}} type="button" className="btn btn-primary m-3">Description text NC</button>
-            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(false);setAfficheTextMission(true);setAfficheTextVision(false);setAfficheFooter(false)}} type="button" className="btn btn-primary m-3">Mission</button>
-            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(false);setAfficheTextMission(false);setAfficheTextVision(true);setAfficheFooter(false)}} type="button" className="btn btn-primary m-3">Vision</button>
-            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(false);setAfficheTextMission(false);setAfficheTextVision(false);setAfficheFooter(true)}} type="button" className="btn btn-primary m-3">Footer</button>
+        <div style={{marginTop:"130px", marginLeft:'150px'}}>
+            <button onClick={()=>{setafficheMotDg(true);setAfficheDescription(false);setAfficheTextMission(false);setAfficheTextVision(false);setAfficheFooter(false);setAfficheNumeroService(false);setAfficheNumeroAgent(false)}} type="button" className="btn btn-primary m-3">Mot du dg</button>
+            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(true);setAfficheTextMission(false);setAfficheTextVision(false);setAfficheFooter(false);setAfficheNumeroService(false);setAfficheNumeroAgent(false)}} type="button" className="btn btn-primary m-3">Description text NC</button>
+            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(false);setAfficheTextMission(true);setAfficheTextVision(false);setAfficheFooter(false);setAfficheNumeroService(false);setAfficheNumeroAgent(false)}} type="button" className="btn btn-primary m-3">Mission</button>
+            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(false);setAfficheTextMission(false);setAfficheTextVision(true);setAfficheFooter(false);setAfficheNumeroService(false);setAfficheNumeroAgent(false)}} type="button" className="btn btn-primary m-3">Vision</button>
+            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(false);setAfficheTextMission(false);setAfficheTextVision(false);setAfficheFooter(true);setAfficheNumeroService(false);setAfficheNumeroAgent(false)}} type="button" className="btn btn-primary m-3">Lien réseau sociaux</button>
+            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(false);setAfficheTextMission(false);setAfficheTextVision(false);setAfficheFooter(false);setAfficheNumeroService(true);setAfficheNumeroAgent(false)}} type="button" className="btn btn-primary m-3">Numéro et Email service</button>
+            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(false);setAfficheTextMission(false);setAfficheTextVision(false);setAfficheFooter(false);setAfficheNumeroService(false);setAfficheNumeroAgent(true)}} type="button" className="btn btn-primary m-3">Numéro agneces</button>
             {/* <button onClick={()=>{setafficheMotDg(true);setAfficheDescription(false);}} type="button" className="btn btn-primary m-3">Plan Epargne</button> */}
         </div>
            {  afficheMotDg &&
@@ -390,7 +476,80 @@ const handleLinks = (e) => {
                             </form>
                     </div>
                 }
+                {  afficheNumeroService &&
+                    <div className='m-5'>
+                        {afficheMessageModif && <div className="alert alert-success" role="alert">
+                            Vous avez modifié le contenu!
+                            </div>
+                        }
+                        <form onSubmit={handleNumberService}>
+                        <div className="form-group">
+                            <label for="exampleFormControlTextarea1">Numero 1</label>
+                            <textarea  value={num1}
+                            onChange={(e)=> setNum1(e.target.value)}
+                            className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <div className="form-group">
+                            <label for="exampleFormControlTextarea1">Numero 2</label>
+                            <textarea  value={num2}
+                                onChange={(e)=> setNum2(e.target.value)}
+                            className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <div className="form-group">
+                            <label for="exampleFormControlTextarea1">Email</label>
+                            <textarea value={email} onChange={(e)=> setEmail(e.target.value)}
+                            className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <div className="form-group">
+                            <label for="exampleFormControlTextarea1">Adresse</label>
+                            <textarea value={adresse} onChange={(e)=> setAdresse(e.target.value)}
+                            className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                    
+                            <button type="submit" className="btn btn-primary mt-2">Modifier</button>
+                            </form>
+                    </div>
+                }
 
+                {  afficheNumeroAgent &&
+                    <div className='m-5'>
+                        {afficheMessageModif && <div className="alert alert-success" role="alert">
+                            Vous avez modifié le contenu!
+                            </div>
+                        }
+                        <form onSubmit={handleNumberAgnce}>
+                        <div className="form-group">
+                            <label for="exampleFormControlTextarea1">Numero agent Central</label>
+                            <textarea  value={num_central}
+                            onChange={(e)=> setNumCentral(e.target.value)}
+                            className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <div className="form-group">
+                            <label for="exampleFormControlTextarea1">Numero agent Charbon</label>
+                            <textarea  value={num_charbon}
+                                onChange={(e)=> setNumCharbon(e.target.value)}
+                            className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <div className="form-group">
+                            <label for="exampleFormControlTextarea1">Numero agant Toujouni</label>
+                            <textarea value={num_toujouni} onChange={(e)=> setNumToujouni(e.target.value)}
+                            className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <div className="form-group">
+                            <label for="exampleFormControlTextarea1">Numero agant Point Chaud</label>
+                            <textarea value={num_point_chaud} onChange={(e)=> setNumPointChaud(e.target.value)}
+                            className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <div className="form-group">
+                            <label for="exampleFormControlTextarea1">Numero agant Nouadhibou</label>
+                            <textarea value={num_nouadhibou} onChange={(e)=> setNumNouadhibou(e.target.value)}
+                            className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                    
+                            <button type="submit" className="btn btn-primary mt-2">Modifier</button>
+                            </form>
+                    </div>
+                }
     </div>
   )
 }
