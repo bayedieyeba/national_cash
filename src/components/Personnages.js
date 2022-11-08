@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {useTranslation} from "react-i18next";
-import samba from '../images/samba.jpeg'
+//import samba from '../images/samba.jpeg'
 import './css/personnages.css'
 import {
   MDBCarousel,
@@ -11,10 +11,24 @@ import {
   MDBCol,
   MDBIcon,
 } from "mdb-react-ui-kit";
+import axios from "axios";
 
 export default function Personnages() {
   const {t} =useTranslation()
-  
+  const [url,setUrl] = useState([])
+  useEffect(()=>{
+    axios.get(`http://localhost:4000/get-image-dg`)
+    .then(res=>{
+      console.log("Status: ", res.status);
+      setUrl(res.data)
+      console.log(url)
+     
+    })
+    .catch(err=>{
+      console.log(err)
+    })
+
+},[])
   return (
     <div className="personnage" >
           <MDBContainer className="my-5" style={{color:'blue'}}>
@@ -22,12 +36,17 @@ export default function Personnages() {
               <MDBCarouselInner>
                 <MDBCarouselItem className="active text-center">
                   
-                  <img
-                    src={samba}
+                 {  url.map((image,i)=>(
+                  <div>
+                    <img
+                    src={`http://localhost:4000/images/${image.url}`} 
                     alt="avatar"
                     className="rounded-circle shadow-1-strong mb-4"
                     style={{ width: "130px" }}
                   />
+                  </div>
+                 ))
+                }
                   <MDBRow className="d-flex justify-content-center">
                     <MDBCol lg="8">
                       <h5 className="mb-3" style={{color:'#003d6a'}} >Mr Samba DIA </h5>

@@ -9,6 +9,7 @@ import nc from '../images/nc.png';
 import logo1 from '../images/logo1.png';
 import { Link } from 'react-router-dom';
 import { Opacity } from '@material-ui/icons';
+import axios from 'axios';
 
 const languages = [
     {
@@ -35,6 +36,20 @@ const GlobeIcon = ({width =24, height=24}) =>(
 )
 const Header = () => {
     const {t} =useTranslation()
+    const [url,setUrl] = useState([])
+    useEffect(()=>{
+        axios.get(`http://localhost:4000/get-image-logo`)
+        .then(res=>{
+          console.log("Status: ", res.status);
+          setUrl(res.data)
+          console.log(url)
+         
+        })
+        .catch(err=>{
+          console.log(err)
+        })
+    
+    },[])
     const currentLanguageCode = cookies.get('i18next') || 'fr'
     const currentLanguage = languages.find((l) => l.code ===currentLanguageCode)
     useEffect(()=>{
@@ -59,7 +74,14 @@ const Header = () => {
                                 <div className='mx-5'></div>
                                 
                                 <div className='d-flex justify-content-end mx-5 ' >
-                                     <img  src={logo1} style={{height:'100px',width:'110px'}} alt="" />
+                                
+                                     {
+                                        url.map((image,i)=>(
+                                        <div>
+                                        <img  src={`http://localhost:4000/images/${image.url}`}  style={{height:'100px',width:'110px'}} alt="" />
+                                        </div>
+                                        ))
+                                     }
                                 </div >
                         </div>
                         

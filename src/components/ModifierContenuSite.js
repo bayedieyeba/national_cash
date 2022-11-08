@@ -16,6 +16,7 @@ const [afficheDescription, setAfficheDescription] = useState(false)
 const [afficheTextMission , setAfficheTextMission] = useState(false)
 const [afficheTextVision,setAfficheTextVision] = useState(false)
 const [afficheFooter,setAfficheFooter] = useState(false)
+const [afficheLogo, setAfficheLogo] = useState(false)
 
 const [afficheNumeroService, setAfficheNumeroService] = useState(false)
 const [afficheNumeroAgent,setAfficheNumeroAgent] = useState(false)
@@ -298,16 +299,57 @@ const handleNumberService = (e) => {
           console.log(e);   
        });
     }
+    const [imageUpload,setImageUpload] = useState(null)
+    const uploadImage =(e)=>{
+        e.preventDefault()
+
+        const formaData = new FormData()
+        formaData.append('image',imageUpload)
+        console.log(formaData)
+        const config = {
+            headers :{
+                'content-type' : 'multipart/form-data',
+            }
+        }
+        const url = 'http://localhost:4000/add-image-dg'
+        axios.post(url,formaData,config).then((response) =>{
+            alert("Image upload")
+        }) .catch((e) => {
+            console.log(e);   
+         });
+         
+     
+    }
+    const [imageLogoUpload,setImageLogoUpload] = useState(null)
+    const uploadImageLogo =(e) =>{
+        e.preventDefault()
+
+        const formaData = new FormData()
+        formaData.append('image',imageLogoUpload)
+        console.log(formaData)
+        const config = {
+            headers :{
+                'content-type' : 'multipart/form-data',
+            }
+        }
+        const url = 'http://localhost:4000/add-image-logoSite'
+        axios.post(url,formaData,config).then((response) =>{
+            alert("Image upload")
+        }) .catch((e) => {
+            console.log(e);   
+         });
+    }
   return (
-    <div style={{marginTop:"130px", marginLeft:'150px'}}>
-        <div style={{marginTop:"130px", marginLeft:'150px'}}>
-            <button onClick={()=>{setafficheMotDg(true);setAfficheDescription(false);setAfficheTextMission(false);setAfficheTextVision(false);setAfficheFooter(false);setAfficheNumeroService(false);setAfficheNumeroAgent(false)}} type="button" className="btn btn-primary m-3">Mot du dg</button>
-            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(true);setAfficheTextMission(false);setAfficheTextVision(false);setAfficheFooter(false);setAfficheNumeroService(false);setAfficheNumeroAgent(false)}} type="button" className="btn btn-primary m-3">Description text NC</button>
-            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(false);setAfficheTextMission(true);setAfficheTextVision(false);setAfficheFooter(false);setAfficheNumeroService(false);setAfficheNumeroAgent(false)}} type="button" className="btn btn-primary m-3">Mission</button>
-            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(false);setAfficheTextMission(false);setAfficheTextVision(true);setAfficheFooter(false);setAfficheNumeroService(false);setAfficheNumeroAgent(false)}} type="button" className="btn btn-primary m-3">Vision</button>
-            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(false);setAfficheTextMission(false);setAfficheTextVision(false);setAfficheFooter(true);setAfficheNumeroService(false);setAfficheNumeroAgent(false)}} type="button" className="btn btn-primary m-3">Lien réseau sociaux</button>
-            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(false);setAfficheTextMission(false);setAfficheTextVision(false);setAfficheFooter(false);setAfficheNumeroService(true);setAfficheNumeroAgent(false)}} type="button" className="btn btn-primary m-3">Numéro et Email service</button>
-            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(false);setAfficheTextMission(false);setAfficheTextVision(false);setAfficheFooter(false);setAfficheNumeroService(false);setAfficheNumeroAgent(true)}} type="button" className="btn btn-primary m-3">Numéro agneces</button>
+    <div style={{marginTop:"130px", marginLeft:'100px'}}>
+        <div style={{marginTop:"130px", marginLeft:'30px'}}>
+            <button onClick={()=>{setafficheMotDg(true);setAfficheDescription(false);setAfficheTextMission(false);setAfficheTextVision(false);setAfficheFooter(false);setAfficheNumeroService(false);setAfficheNumeroAgent(false);setAfficheLogo(false)}} type="button" className="btn btn-primary m-3">Mot du dg</button>
+            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(true);setAfficheTextMission(false);setAfficheTextVision(false);setAfficheFooter(false);setAfficheNumeroService(false);setAfficheNumeroAgent(false);setAfficheLogo(false)}} type="button" className="btn btn-primary m-3">Description text NC</button>
+            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(false);setAfficheTextMission(true);setAfficheTextVision(false);setAfficheFooter(false);setAfficheNumeroService(false);setAfficheNumeroAgent(false);setAfficheLogo(false)}} type="button" className="btn btn-primary m-3">Mission</button>
+            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(false);setAfficheTextMission(false);setAfficheTextVision(true);setAfficheFooter(false);setAfficheNumeroService(false);setAfficheNumeroAgent(false);setAfficheLogo(false)}} type="button" className="btn btn-primary m-3">Vision</button>
+            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(false);setAfficheTextMission(false);setAfficheTextVision(false);setAfficheFooter(true);setAfficheNumeroService(false);setAfficheNumeroAgent(false);setAfficheLogo(false)}} type="button" className="btn btn-primary m-3">Lien réseau sociaux</button>
+            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(false);setAfficheTextMission(false);setAfficheTextVision(false);setAfficheFooter(false);setAfficheNumeroService(true);setAfficheNumeroAgent(false);setAfficheLogo(false)}} type="button" className="btn btn-primary m-3">Numéro et Email service</button>
+            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(false);setAfficheTextMission(false);setAfficheTextVision(false);setAfficheFooter(false);setAfficheNumeroService(false);setAfficheNumeroAgent(true);setAfficheLogo(false)}} type="button" className="btn btn-primary m-3">Numéro agneces</button>
+            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(false);setAfficheTextMission(false);setAfficheTextVision(false);setAfficheFooter(false);setAfficheNumeroService(false);setAfficheNumeroAgent(false);setAfficheLogo(true)}} type="button" className="btn btn-primary m-3">modifier image logo</button>
             {/* <button onClick={()=>{setafficheMotDg(true);setAfficheDescription(false);}} type="button" className="btn btn-primary m-3">Plan Epargne</button> */}
         </div>
            {  afficheMotDg &&
@@ -337,6 +379,14 @@ const handleNumberService = (e) => {
                     
                             <button type="submit" className="btn btn-primary mt-2">Modifier</button>
                             </form>
+                            <div className="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+                                <input id="upload" type="file" onChange={(e)=>{setImageUpload(e.target.files[0])}} className="form-control border-0" />
+                                
+                                <div className="input-group-append">
+                                    <label for="upload" className="btn btn-light m-0 rounded-pill px-4"> <i className="fa fa-cloud-upload mr-2 text-muted"></i><small className="text-uppercase font-weight-bold text-muted">Choisir fichier</small></label>
+                                </div>
+                            </div>
+                                <button onClick={uploadImage} type="button" className="btn btn-primary">Enragistrer</button>
                     </div>
                 }
                 {  afficheDescription &&
@@ -549,6 +599,18 @@ const handleNumberService = (e) => {
                             <button type="submit" className="btn btn-primary mt-2">Modifier</button>
                             </form>
                     </div>
+                }
+                { afficheLogo &&
+                   <div style={{width:"550px"}}>
+                    <div className="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+                   <input id="upload" type="file" onChange={(e)=>{setImageLogoUpload(e.target.files[0])}} className="form-control border-0" />
+                   
+                   <div className="input-group-append">
+                       <label for="upload" className="btn btn-light m-0 rounded-pill px-4"> <i className="fa fa-cloud-upload mr-2 text-muted"></i><small className="text-uppercase font-weight-bold text-muted">Choisir fichier</small></label>
+                   </div>
+               </div>
+                   <button onClick={uploadImageLogo} type="button" className="btn btn-primary">Enragistrer</button>
+                   </div> 
                 }
     </div>
   )
