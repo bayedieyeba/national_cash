@@ -11,13 +11,10 @@ import Popup from "./components/Popup";
 import { useState,useEffect } from 'react';
 import axios from "axios";
 import Slider from 'react-slick'
-import IMAGES from './components/ImagesPublicite';
-import { listAll, ref ,getDownloadURL } from 'firebase/storage' 
 import UploadImagePub from './components/UploadImagePub';
 import ModifierContenuCompte from './components/ModifierContenuCompte';
 import ModifierCompteAnglais from './components/ModifierCompteAnglais';
 import ModifierCompteArabe from './components/ModifierCompteArabe';
-import { ProtectedRoute } from './components/protected.route';
 import ModifierContenuSite from './components/ModifierContenuSite';
 import ModifierContenuCredit from './components/ModifierContenuCredit';
 import ModifierContenuCreditFrancais from './components/ModifierContenuCreditFrancais';
@@ -92,11 +89,11 @@ function App() {
             <Routes>
               <Route exact path='/upload-image' element={<UploadImagePub />} />
             </Routes>
-            <Routes>
+            <Routes >
               <Route exact path='/modifier-compte-francais' element={<ModifierContenuCompte />} />
             </Routes>
             <Routes>
-              <Route exact path='/modifier-compte-anglais' element={<ModifierCompteAnglais />} />
+              <Route  exact path='/modifier-compte-anglais' element={<ModifierCompteAnglais />} />
             </Routes>
             {/* <Routes>
               <ProtectedRoute exact path='/modifier-compte-anglais' element={<ModifierCompteAnglais />} />

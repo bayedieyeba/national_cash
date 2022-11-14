@@ -3,6 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useEffect } from 'react';
 import e from 'cors';
+import Popup from "../components/Popup";
 
 const ModifierContenuSite = () => {
   const[motFr,setMotFr] = useState("")
@@ -17,9 +18,10 @@ const [afficheTextMission , setAfficheTextMission] = useState(false)
 const [afficheTextVision,setAfficheTextVision] = useState(false)
 const [afficheFooter,setAfficheFooter] = useState(false)
 const [afficheLogo, setAfficheLogo] = useState(false)
+const [afficheAjoutAgent,setAfficheAjoutAgent] = useState(false)
+const [afficheSupprimerAgent,setAficheSupprimerAgent] = useState(false)
 
 const [afficheNumeroService, setAfficheNumeroService] = useState(false)
-const [afficheNumeroAgent,setAfficheNumeroAgent] = useState(false)
 
 const[titre_fr,setTitre_fr] = useState("")
 const[titre_en,setTitre_en] = useState("")
@@ -339,17 +341,121 @@ const handleNumberService = (e) => {
             console.log(e);   
          });
     }
+    const [nomAgent,setNomAgent] = useState("")
+    const [longitude,setLongitude] = useState("")
+    const [phoneAgent,setPhoneAgent] = useState("")
+    const [laltitude,setLaltitude] = useState("")
+    const handleAjoutAgent = (e) => {
+        e.preventDefault()
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ "nom":nomAgent,"longitude":longitude,"altitude":laltitude,"phone":phoneAgent})
+        };
+    
+        fetch('http://localhost:4000/add-agent',requestOptions)
+        
+        .then( response => {
+            setAfficheMessageModif(true)
+              setNomAgent("")
+              setLongitude("")
+              setLaltitude("")
+              setPhoneAgent("")    
+         })
+         .catch((e) => {
+          console.log(e);   
+       });
+    }
+    const [agents,setAgents] = useState([])
+    useEffect(()=>{
+        axios.get(`http://localhost:4000/get-agent`)
+        .then(res=>{
+          console.log("Status: ", res.status);
+          setAgents(res.data)
+         
+        })
+        .catch(err=>{
+          console.log(err)
+        })
+
+    },[])
+    const [idAgent,setIdAgent] = useState() 
+    const handleSupprimerAgent = ()=>{
+        axios.delete(`http://localhost:4000/agent/${idAgent}`)
+        .then(res=>{
+          console.log("Status: ", res.status);
+          if(res.status == 200){
+            setAfficheMessageModif(true)
+          }
+        })
+        .catch(err=>{
+          console.log(err)
+        })
+    }
+    const [buttonPopup,setButtonPopup] = useState(false)
+
+    const [nomAgentModif,setNomAgentModif] = useState("")
+    const [longitudeModif,setLongitudeModif] = useState()
+    const [altitudeModif,setAltitudeModif] = useState()
+    const[phoneModif,setPhoneModif] = useState()
+    const [afficheModif,setAfficheModif] = useState(false)
+    const handleModifAgent = (e)=>{
+        e.preventDefault()
+        const requestOptions = {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ "nom":nomAgentModif,"longitude":longitudeModif,"altitude":altitudeModif,"phone":phoneModif})
+        };
+    
+        fetch(`http://localhost:4000/update-agent/${idAgent}`,requestOptions)
+        
+        .then( response => {
+            setAfficheModif(true)
+                
+         })
+         .catch((e) => {
+          console.log(e);   
+       });
+    }
   return (
     <div style={{marginTop:"130px", marginLeft:'100px'}}>
+        <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
+        <div className='m-5'>
+                {afficheModif && <div className="alert alert-success" role="alert">
+                    Vous avez modifié l'agent {nomAgentModif}!
+                    </div>
+                }
+                <form onSubmit={handleModifAgent}>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Nom de l'agent</label>
+                    <input value={nomAgentModif} onChange={(e)=>setNomAgentModif(e.target.value)} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nom de l'agent" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">la longitude</label>
+                    <input value={longitudeModif} onChange={(e)=> setLongitudeModif(e.target.value)} type="number" class="form-control" id="exampleInputPassword1" placeholder="longitude" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">la laltitude</label>
+                    <input value={altitudeModif} onChange={(e)=>setAltitudeModif(e.target.value)} type="number" class="form-control" id="exampleInputPassword1" placeholder="laltitude" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Numéro de téléphone</label>
+                    <input value={phoneModif} onChange={(e)=>setPhoneModif(e.target.value)} type="text"  class="form-control" id="exampleInputPassword1" placeholder="phone" />
+                </div>
+                <button type="submit" class="btn btn-primary mt-2">Enregistrer</button>
+                </form>
+            </div>
+        </Popup>
         <div style={{marginTop:"130px", marginLeft:'30px'}}>
-            <button onClick={()=>{setafficheMotDg(true);setAfficheDescription(false);setAfficheTextMission(false);setAfficheTextVision(false);setAfficheFooter(false);setAfficheNumeroService(false);setAfficheNumeroAgent(false);setAfficheLogo(false)}} type="button" className="btn btn-primary m-3">Mot du dg</button>
-            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(true);setAfficheTextMission(false);setAfficheTextVision(false);setAfficheFooter(false);setAfficheNumeroService(false);setAfficheNumeroAgent(false);setAfficheLogo(false)}} type="button" className="btn btn-primary m-3">Description text NC</button>
-            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(false);setAfficheTextMission(true);setAfficheTextVision(false);setAfficheFooter(false);setAfficheNumeroService(false);setAfficheNumeroAgent(false);setAfficheLogo(false)}} type="button" className="btn btn-primary m-3">Mission</button>
-            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(false);setAfficheTextMission(false);setAfficheTextVision(true);setAfficheFooter(false);setAfficheNumeroService(false);setAfficheNumeroAgent(false);setAfficheLogo(false)}} type="button" className="btn btn-primary m-3">Vision</button>
-            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(false);setAfficheTextMission(false);setAfficheTextVision(false);setAfficheFooter(true);setAfficheNumeroService(false);setAfficheNumeroAgent(false);setAfficheLogo(false)}} type="button" className="btn btn-primary m-3">Lien réseau sociaux</button>
-            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(false);setAfficheTextMission(false);setAfficheTextVision(false);setAfficheFooter(false);setAfficheNumeroService(true);setAfficheNumeroAgent(false);setAfficheLogo(false)}} type="button" className="btn btn-primary m-3">Numéro et Email service</button>
-            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(false);setAfficheTextMission(false);setAfficheTextVision(false);setAfficheFooter(false);setAfficheNumeroService(false);setAfficheNumeroAgent(true);setAfficheLogo(false)}} type="button" className="btn btn-primary m-3">Numéro agneces</button>
-            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(false);setAfficheTextMission(false);setAfficheTextVision(false);setAfficheFooter(false);setAfficheNumeroService(false);setAfficheNumeroAgent(false);setAfficheLogo(true)}} type="button" className="btn btn-primary m-3">modifier image logo</button>
+            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(true);setAfficheTextMission(false);setAfficheTextVision(false);setAfficheFooter(false);setAfficheNumeroService(false);setAfficheLogo(false);setAfficheAjoutAgent(false);setAficheSupprimerAgent(false)}} type="button" className="btn btn-primary m-3">Description text NC</button>
+            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(false);setAfficheTextMission(true);setAfficheTextVision(false);setAfficheFooter(false);setAfficheNumeroService(false);setAfficheLogo(false);setAfficheAjoutAgent(false);setAficheSupprimerAgent(false)}} type="button" className="btn btn-primary m-3">Mission</button>
+            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(false);setAfficheTextMission(false);setAfficheTextVision(true);setAfficheFooter(false);setAfficheNumeroService(false);setAfficheLogo(false);setAfficheAjoutAgent(false);setAficheSupprimerAgent(false)}} type="button" className="btn btn-primary m-3">Vision</button>
+            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(false);setAfficheTextMission(false);setAfficheTextVision(false);setAfficheFooter(true);setAfficheNumeroService(false);setAfficheLogo(false);setAfficheAjoutAgent(false);setAficheSupprimerAgent(false)}} type="button" className="btn btn-primary m-3">Lien réseau sociaux</button>
+            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(false);setAfficheTextMission(false);setAfficheTextVision(false);setAfficheFooter(false);setAfficheNumeroService(true);setAfficheLogo(false);setAfficheAjoutAgent(false);setAficheSupprimerAgent(false)}} type="button" className="btn btn-primary m-3">Numéro et Email service</button>
+            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(false);setAfficheTextMission(false);setAfficheTextVision(false);setAfficheFooter(false);setAfficheNumeroService(false);setAfficheLogo(true);setAfficheAjoutAgent(false);setAficheSupprimerAgent(false)}} type="button" className="btn btn-primary m-3">modifier image logo</button>
+            <button onClick={()=>{setafficheMotDg(true);setAfficheDescription(false);setAfficheTextMission(false);setAfficheTextVision(false);setAfficheFooter(false);setAfficheNumeroService(false);setAfficheLogo(false);setAfficheAjoutAgent(false);setAficheSupprimerAgent(false)}} type="button" className="btn btn-primary m-3">Mot du dg</button>
+            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(false);setAfficheTextMission(false);setAfficheTextVision(false);setAfficheFooter(false);setAfficheNumeroService(false);setAfficheLogo(false);setAfficheAjoutAgent(true);setAficheSupprimerAgent(false)}} type="button" className="btn btn-primary m-3">Ajouter Agent</button>
+            <button onClick={()=>{setafficheMotDg(false);setAfficheDescription(false);setAfficheTextMission(false);setAfficheTextVision(false);setAfficheFooter(false);setAfficheNumeroService(false);setAfficheLogo(false);setAfficheAjoutAgent(false);setAficheSupprimerAgent(true)}} type="button" className="btn btn-primary m-3">Lister Agents</button>
             {/* <button onClick={()=>{setafficheMotDg(true);setAfficheDescription(false);}} type="button" className="btn btn-primary m-3">Plan Epargne</button> */}
         </div>
            {  afficheMotDg &&
@@ -561,45 +667,7 @@ const handleNumberService = (e) => {
                     </div>
                 }
 
-                {  afficheNumeroAgent &&
-                    <div className='m-5'>
-                        {afficheMessageModif && <div className="alert alert-success" role="alert">
-                            Vous avez modifié le contenu!
-                            </div>
-                        }
-                        <form onSubmit={handleNumberAgnce}>
-                        <div className="form-group">
-                            <label for="exampleFormControlTextarea1">Numero agent Central</label>
-                            <textarea  value={num_central}
-                            onChange={(e)=> setNumCentral(e.target.value)}
-                            className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                        </div>
-                        <div className="form-group">
-                            <label for="exampleFormControlTextarea1">Numero agent Charbon</label>
-                            <textarea  value={num_charbon}
-                                onChange={(e)=> setNumCharbon(e.target.value)}
-                            className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                        </div>
-                        <div className="form-group">
-                            <label for="exampleFormControlTextarea1">Numero agant Toujouni</label>
-                            <textarea value={num_toujouni} onChange={(e)=> setNumToujouni(e.target.value)}
-                            className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                        </div>
-                        <div className="form-group">
-                            <label for="exampleFormControlTextarea1">Numero agant Point Chaud</label>
-                            <textarea value={num_point_chaud} onChange={(e)=> setNumPointChaud(e.target.value)}
-                            className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                        </div>
-                        <div className="form-group">
-                            <label for="exampleFormControlTextarea1">Numero agant Nouadhibou</label>
-                            <textarea value={num_nouadhibou} onChange={(e)=> setNumNouadhibou(e.target.value)}
-                            className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                        </div>
-                    
-                            <button type="submit" className="btn btn-primary mt-2">Modifier</button>
-                            </form>
-                    </div>
-                }
+          
                 { afficheLogo &&
                    <div style={{width:"550px"}}>
                     <div className="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
@@ -611,6 +679,71 @@ const handleNumberService = (e) => {
                </div>
                    <button onClick={uploadImageLogo} type="button" className="btn btn-primary">Enragistrer</button>
                    </div> 
+                }
+
+                { afficheAjoutAgent &&
+                    <div className='m-5'>
+                        {afficheMessageModif && <div className="alert alert-success" role="alert">
+                            Vous avez modifié le contenu!
+                            </div>
+                        }
+                        <form onSubmit={handleAjoutAgent}>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Nom de l'agent</label>
+                            <input value={nomAgent} onChange={(e)=>setNomAgent(e.target.value)} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nom de l'agent" />
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">la longitude</label>
+                            <input value={longitude} onChange={(e)=> setLongitude(e.target.value)} type="number" class="form-control" id="exampleInputPassword1" placeholder="longitude" />
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">la laltitude</label>
+                            <input value={laltitude} onChange={(e)=>setLaltitude(e.target.value)} type="number" class="form-control" id="exampleInputPassword1" placeholder="laltitude" />
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Numéro de téléphone</label>
+                            <input value={phoneAgent} onChange={(e)=>setPhoneAgent(e.target.value)} type="number" min="0" class="form-control" id="exampleInputPassword1" placeholder="phone" />
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-2">Enregistrer</button>
+                        </form>
+                    </div>
+                }
+
+                {
+                    afficheSupprimerAgent &&
+                   <div>
+                    {afficheMessageModif && <div className="alert alert-danger" role="alert">
+                            Vous avez supprimé un agnet!
+                            </div>
+                        }
+                         <table class="table">
+                            <thead class="thead-light">
+                            <tr>
+                                <th>Nom agnet</th>
+                                <th>Longitude agent</th>
+                                <th>Laltitude agent</th>
+                                <th>Téléphone agnet</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                {
+                                    agents.map((agent)=>(
+
+                                    <tr>
+                                       <td>{agent.nom} </td>
+                                       <td>{agent.longitude}</td>
+                                       <td>{agent.altitude} </td>
+                                       <td> {agent.phone} </td>
+                                       <td><button onClick={()=>{setButtonPopup(true);setNomAgentModif(agent.nom);setIdAgent(agent.id); setLongitudeModif(agent.longitude);setPhoneModif(agent.phone);setAltitudeModif(agent.altitude)}} 
+                                        className="btn btn-primary">modifier</button> </td>
+                                       <td><button onClick={()=>{setIdAgent(agent.id); handleSupprimerAgent()}} className="btn btn-danger">supprimer</button> </td>
+                                    </tr>
+                                    ))
+                                }
+                            </tbody>
+                    </table>
+                   </div>
                 }
     </div>
   )

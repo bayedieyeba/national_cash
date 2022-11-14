@@ -14,6 +14,8 @@ import './css/footer.css'
 import './css/footerBottom.css'
 import Fade from 'react-reveal/Fade';
 import Slide from 'react-reveal/Slide';
+import { useState } from 'react';
+import axios from 'axios';
 
 
 
@@ -21,39 +23,72 @@ import Slide from 'react-reveal/Slide';
 const Footer = () => {
     const {t} =useTranslation()
 
-        const center = {lat:18.081594,lng:-15.976268}
         const positions = [
-            center,
-            {lat:18.082516,lng:-15.980804},
-            {lat:18.069022,lng:-15.909039},
-            {lat:18.089619,lng : -15.976678},
+            
+            {"id":1, lat:18.082516,lng:-15.980804},
+            {"id":2,lat:18.069022,lng:-15.909039},
+            {"id":3,lat:18.089619,lng : -15.976678},
+           
         ]
-       
+        var iframeIds = []
+        const [urls,setUrls] = useState([])
+        useEffect(()=>{
+          axios.get(`http://localhost:4000/get-agent`)
+          .then(res=>{
+            console.log("Status: ", res.status);
+            setUrls(res.data)
+            console.log(urls)
+           
+          })
+          .catch(err=>{
+            console.log(err)
+          })
+  
+      },[])
+      
+    //const [iframeId,setIframeId] = useState([])
+    var liens = []
     useEffect(()=>{
-        const ifameData=document.getElementById("iframeId")
-        const lat=18.081594;
-        const lon= -15.976268;
-        ifameData.src=`https://maps.google.com/maps?q=${lat},${lon}&hl=es;&output=embed`
-
-        const ifameData2=document.getElementById("iframeId2")
-        const lat2=18.082516;
-        const lon2= -15.980804;
-        ifameData2.src=`https://maps.google.com/maps?q=${lat2},${lon2}&hl=es;&output=embed`
-        
-        const ifameData3=document.getElementById("iframeId3")
-        const lat3=18.069022;
-        const lon3= -15.909039;
-        ifameData3.src=`https://maps.google.com/maps?q=${lat3},${lon3}&hl=es;&output=embed`
-        const ifameData4=document.getElementById("iframeId4")
-        const lat4=18.089619;
-        const lon4= -15.976678;
-        ifameData4.src=`https://maps.google.com/maps?q=${lat4},${lon4}&hl=es;&output=embed`
-        const ifameData5=document.getElementById("iframeId5")
+        for (let index = 0; index < urls.length; index++) {
+            iframeIds.push(`iframeId${index}`)
+             
+         }   
+         for (let index = 0; index < iframeIds.length; index++) {
+             const ifameData = document.getElementById(`${iframeIds[index]}`);
+               //`${urls[index]['url']}`;
+           
+         }  
          
-        const lat5=20.942067;
-        const lon5= -17.038903;
-        ifameData5.src=`https://maps.google.com/maps?q=${lat5},${lon5}&hl=es;&output=embed`
+   
     })
+
+    // useEffect(()=>{
+        
+    //     const ifameData=document.getElementById("iframeId")
+    //     const lat=18.081594;
+    //     const lon= -15.976268;
+    //     ifameData.src=`https://maps.google.com/maps?q=${lat},${lon}&hl=es;&output=embed`
+    //     console.log(ifameData)
+    //     const ifameData2=document.getElementById("iframeId2")
+    //     const lat2=18.082516;
+    //     const lon2= -15.980804;
+    //     ifameData2.src=`https://maps.google.com/maps?q=${lat2},${lon2}&hl=es;&output=embed`
+        
+    //     const ifameData3=document.getElementById("iframeId3")
+    //     const lat3=18.069022;
+    //     const lon3= -15.909039;
+    //     ifameData3.src=`https://maps.google.com/maps?q=${lat3},${lon3}&hl=es;&output=embed`
+    //     const ifameData4=document.getElementById("iframeId4")
+    //     const lat4=18.089619;
+    //     const lon4= -15.976678;
+    //     ifameData4.src=`https://maps.google.com/maps?q=${lat4},${lon4}&hl=es;&output=embed`
+    //     const ifameData5=document.getElementById("iframeId5")
+         
+    //     const lat5=20.942067;
+    //     const lon5= -17.038903;
+    //     ifameData5.src=`https://maps.google.com/maps?q=${lat5},${lon5}&hl=es;&output=embed`
+   
+    // })
 
     return (
       
@@ -91,7 +126,7 @@ const Footer = () => {
                     </Fade>
                     <Fade left>
                      <div className='d-flex justify-content-center  '>
-                        
+{/*                         
                                 <div className='m-1'> 
                                     <div className='card' style={{backgroundColor:"#e89059"}}>
                                         <p style={{color:'black',textAlign:'center',fontSize:'21px',fontFamily:'Roboto,sans-serif'}} className=" m-1">Agence CENTRALE</p>
@@ -115,7 +150,7 @@ const Footer = () => {
                                 </div>
                                 <div className='m-1'> 
                                 <div className='card' style={{backgroundColor:"#e89059"}}>
-                                        <p style={{color:'black',textAlign:'center',fontSize:'21px',fontFamily:'Roboto,sans-serif'}} className=" m-1">Agence POINT CHAUD </p>
+                                        <p style={{color:'black',textAlign:'center',fontSize:'21px',fontFamily:'Roboto,sans-serif'}} className=" m-1">Agence POINT CHAUD</p>
                                         <p style={{textAlign:'center', color:'black'}}>{t('num_agant_point_chaud')}</p>
                                     <iframe id="iframeId4" height="180px" width="200%"></iframe>
                                     </div>
@@ -126,7 +161,18 @@ const Footer = () => {
                                         <p style={{textAlign:'center', color:'black'}}>{t('num_agant_nouadhibou')}</p>
                                     <iframe id="iframeId5" height="180px" width="200%"></iframe>
                                     </div>
+                                </div> */}
+                                {
+                                    urls.map((url)=>(
+                                        <div className='m-1'> 
+                                <div className='card' style={{backgroundColor:"#e89059"}}>
+                                        <p style={{color:'black',textAlign:'center',fontSize:'21px',fontFamily:'Roboto,sans-serif'}} className=" m-1">{url["nom"]} </p>
+                                        <p style={{textAlign:'center', color:'black'}}>{url["phone"]} </p>
+                                        <iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src={url.url} ></iframe>
+                                    </div>
                                 </div>
+                                    ))
+                                }
                         </div>
                     </Fade>
                  </div>
